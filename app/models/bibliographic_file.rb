@@ -1,0 +1,2 @@
+class BibliographicFile < ApplicationRecord
+end
