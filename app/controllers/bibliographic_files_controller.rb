@@ -3,7 +3,6 @@ class BibliographicFilesController < ApplicationController
 
   def index
     @bibliographic_files = BibliographicFile.all
-    render json: @bibliographic_files
   end
 
   def show
@@ -18,11 +17,22 @@ class BibliographicFilesController < ApplicationController
 
   def create
     @bibliographic_file = BibliographicFile.new(bibliographic_file_params)
-
+   
+    if @bibliographic_file.save
+      notice = 'La ficha fue creada exitosamente'
+      redirect_to root_path, notice: notice
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def update
-
+    if @bibliographic_file.update(bibliographic_file_params)
+      notice = 'La ficha fue actualizada exitosamente'
+      redirect_to root_path, notice: notice
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy

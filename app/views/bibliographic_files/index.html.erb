@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Bibliographic files</h1>
+
+<div id="bibliographic_files">
+  <% @bibliographic_files.each do |bibliographic_file| %>
+    <%= render bibliographic_file %>
+  <% end %>
+</div>
+
+<%= link_to "Crear un nuevo archivo bibliografico", new_bibliographic_file_path, class: "btn btn-outline-dark mb-3" %>
