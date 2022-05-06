@@ -19,6 +19,7 @@ class CreateBibliographicFiles < ActiveRecord::Migration[7.0]
       t.string :issn
       t.string :doi
       t.integer :document_type
+      t.string :document_language
       t.string :country
       t.string :acces_link
       t.boolean :free_lock

@@ -33,6 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_04_170452) do
     t.string "issn"
     t.string "doi"
     t.integer "document_type"
+    t.string "document_language"
     t.string "country"
     t.string "acces_link"
     t.boolean "free_lock"

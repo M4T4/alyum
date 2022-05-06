@@ -1,4 +1,20 @@
-  
+<%= form_tag(root_path, method: :get) do %>
+	<div class="row g-3 mb-3">
+		<div class="col-3">
+			<%= text_field_tag(:term, params[:term], class: "form-control") %>
+		</div>
+		<div class="col-3">
+			<%= submit_tag "Buscar", class: "btn btn-primary"%>
+		</div>
+	</div>
+<% end %>
+
+<% @files.each do |file| %>
+	<%= render partial: "bibliographic_files/bibliographic_file", object: file %>
+<% end %>
+
+
+
 <div class="d-grid gap-2">
 	<%= link_to "Ir a indice de archivos bibliograficos", bibliographic_files_path, class: "btn btn-outline-dark" %>
 	<%= link_to "Crear un nuevo archivo bibliografico", new_bibliographic_file_path, class: "btn btn-outline-dark" %>

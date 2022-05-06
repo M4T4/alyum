@@ -1,13 +1,12 @@
 class BibliographicFilesController < ApplicationController
   before_action :set_bibliographic_file, only: %i[ show edit update destroy ]
+  before_action :set_bibliografic_files_values
 
   def index
     @bibliographic_files = BibliographicFile.all
   end
 
-  def show
-    render json: @bibliographic_file
-  end
+  def show; end
 
   def new
     @bibliographic_file = BibliographicFile.new
@@ -20,7 +19,7 @@ class BibliographicFilesController < ApplicationController
    
     if @bibliographic_file.save
       notice = 'La ficha fue creada exitosamente'
-      redirect_to root_path, notice: notice
+      redirect_to action: "index", notice: notice
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,7 +28,7 @@ class BibliographicFilesController < ApplicationController
   def update
     if @bibliographic_file.update(bibliographic_file_params)
       notice = 'La ficha fue actualizada exitosamente'
-      redirect_to root_path, notice: notice
+      redirect_to action: "index", notice: notice
     else
       render :edit, status: :unprocessable_entity
     end
@@ -43,6 +42,10 @@ class BibliographicFilesController < ApplicationController
   
   def set_bibliographic_file
     @bibliographic_file = BibliographicFile.find(params[:id])
+  end
+
+  def set_bibliografic_files_values
+    @document_types = BibliographicFile.document_types.keys
   end
 
   def bibliographic_file_params
