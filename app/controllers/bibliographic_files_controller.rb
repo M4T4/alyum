@@ -3,7 +3,9 @@ class BibliographicFilesController < ApplicationController
   before_action :set_bibliografic_files_values
 
   def index
-    @bibliographic_files = BibliographicFile.all
+    @q = BibliographicFile.ransack(params[:q])
+    binding.break
+    @files = @q.result(distinct: true)
   end
 
   def show; end

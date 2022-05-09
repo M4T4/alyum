@@ -44,6 +44,7 @@ gem "bootsnap", require: false
 gem 'bootstrap', '~> 5.1.3'
 # gem 'searchkick'
 gem 'simple_form'
+gem 'ransack'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
