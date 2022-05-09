@@ -4,7 +4,6 @@ class BibliographicFilesController < ApplicationController
 
   def index
     @q = BibliographicFile.ransack(params[:q])
-    binding.break
     @files = @q.result(distinct: true)
   end
 
@@ -48,6 +47,8 @@ class BibliographicFilesController < ApplicationController
 
   def set_bibliografic_files_values
     @document_types = BibliographicFile.document_types.keys
+    @n1s = BibliographicFile.n1s.keys
+    @n2s = BibliographicFile.n2s.keys
   end
 
   def bibliographic_file_params

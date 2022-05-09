@@ -150,11 +150,11 @@
               <div class="row g-3 mb-3">
                 <div class="col-4">
                   <%= form.label "N1" %>
-                  <%= form.text_field :n1, class: "form-control"  %>
+                  <%= form.select :n1, @n1s, {include_blank: true}, {:class => "form-select"}  %>
                 </div>
                 <div class="col-4">
                   <%= form.label "N2" %>
-                  <%= form.text_field :n2, class: "form-control"  %>
+                  <%= form.select :n2, @n2s, {include_blank: true}, {:class => "form-select"}  %>
                 </div>
                 <div class="col-4">
                   <%= form.label "Numero de pagina" %>

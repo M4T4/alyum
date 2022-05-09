@@ -1,20 +1,31 @@
 <p style="color: green"><%= notice %></p>
 
-<%= search_form_for @q do |f| %>
-	<div class="row g-3 mb-3">
-		<div class="col-3">
-			<%= f.search_field :language_y, class: "form-control" %>
-		</div>
-		<div class="col-3">
-			<%= f.submit "Buscar", class: "btn btn-primary" %>
-		</div>
+<div class="row g-3 mb-3">
+  <div class="col-3">
+		<%= search_form_for @q do |f| %>
+			<%= f.label "Tipo de documento" %>
+			<%= f.select(:document_type_eq, options_for_select(BibliographicFile.document_types.map {|k, v| [k.humanize.capitalize, v]}, f.object.document_type_eq), { include_blank: true }, {class: "form-select" }) %>
+			
+			<%= f.label "n1" %>		
+			<%= f.select(:n1_eq, options_for_select(BibliographicFile.n1s.map {|k, v| [k.humanize.capitalize, v]}, f.object.n1_eq), { include_blank: true }, {class: "form-select" }) %>
+			
+			<%= f.label "n2" %>
+			<%= f.select(:n2_eq, options_for_select(BibliographicFile.n2s.map {|k, v| [k.humanize.capitalize, v]}, f.object.n2_eq), { include_blank: true }, {class: "form-select" }) %>
+			
+			<%= f.label "Busqueda" %>
+			<%= f.text_field :language_y_or_language_y2_cont, class: 'form-control' %>
+			<%= f.submit class: 'btn btn-primary mt-3' %>
+		<% end %>
 	</div>
-<% end %>
 
-<% @files.each do |file| %>
-	<%= render partial: "bibliographic_files/bibliographic_file", object: file %>
-<% end %>
 
+	<div class="col-9">
+		<% @files.each do |file| %>
+			<%= render partial: "bibliographic_files/bibliographic_file", object: file %>
+		<% end %>
+	</div>
+
+</div>
 
 
 <div class="d-grid gap-2">

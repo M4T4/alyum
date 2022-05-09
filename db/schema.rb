@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_04_170452) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_09_202217) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,10 +37,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_04_170452) do
     t.string "country"
     t.string "acces_link"
     t.boolean "free_lock"
-    t.string "n1"
-    t.string "n2"
+    t.integer "n1"
+    t.integer "n2"
     t.integer "page_number"
     t.string "base"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.bigint "isbn"
+    t.string "name"
+    t.string "author"
+    t.integer "year"
+    t.decimal "price", precision: 7, scale: 2
+    t.boolean "status"
+    t.integer "genre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
