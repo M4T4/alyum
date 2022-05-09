@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateBibliographicFiles < ActiveRecord::Migration[7.0]
   def change
     create_table :bibliographic_files do |t|
@@ -27,7 +29,7 @@ class CreateBibliographicFiles < ActiveRecord::Migration[7.0]
       t.string :n2
       t.integer :page_number
       t.string :base
-      
+
       t.timestamps
     end
   end
