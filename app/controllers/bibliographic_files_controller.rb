@@ -6,7 +6,7 @@ class BibliographicFilesController < ApplicationController
 
   def index
     @q = BibliographicFile.ransack(params[:q])
-    @files = @q.result(distinct: true)
+    @pagy, @files = pagy(@q.result(distinct: true))
   end
 
   def show; end

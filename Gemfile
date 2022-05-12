@@ -46,8 +46,7 @@ gem 'bootsnap', require: false
 gem 'bootstrap', '~> 5.1.3'
 # gem 'searchkick'
 gem 'ransack'
-gem 'simple_form'
-
+gem 'pagy', '~> 5.10' # omit patch digit
 # Use Sass to process CSS
 # gem "sassc-rails"
 

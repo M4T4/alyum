@@ -8,10 +8,7 @@
 			
 			<%= f.label "n1" %>		
 			<%= f.select(:n1_eq, options_for_select(BibliographicFile.n1s.map {|k, v| [k.humanize.capitalize, v]}, f.object.n1_eq), { include_blank: true }, {class: "form-select" }) %>
-			
-			<%= f.label "n2" %>
-			<%= f.select(:n2_eq, options_for_select(BibliographicFile.n2s.map {|k, v| [k.humanize.capitalize, v]}, f.object.n2_eq), { include_blank: true }, {class: "form-select" }) %>
-			
+						
 			<%= f.label "Busqueda" %>
 			<%= f.text_field :language_y_or_language_y2_cont, class: 'form-control' %>
 			<%= f.submit class: 'btn btn-primary mt-3' %>
@@ -27,7 +24,9 @@
 
 </div>
 
+<%== pagy_bootstrap_nav(@pagy) %>
+
 
 <div class="d-grid gap-2">
-	<%= link_to "Crear un nuevo archivo bibliografico", new_bibliographic_file_path, class: "btn btn-outline-dark" %>
+	<%= link_to "Crear un nuevo archivo bibliografico", new_bibliographic_file_path, class: "btn btn-outline-dark mb-3" %>
 </div>
