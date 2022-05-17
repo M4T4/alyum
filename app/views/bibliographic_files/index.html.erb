@@ -16,7 +16,7 @@
 			<%= f.select(:language_y_eq, languages, { include_blank: true }, {class: "form-select" }) %>
 			
 			<%= f.label "Busqueda" %>
-			<%= f.text_field :language_y_or_language_y2_cont, class: 'form-control' %>
+			<%= f.text_field :title_or_b_data_cont, class: 'form-control' %>
 			<%= f.submit "Buscar", class: 'btn btn-primary mt-3 mb-3' %>
 			<%= link_to "Limpiar", request.path, class: "btn btn-secondary mt-3 mb-3" %>
 		<% end %>
