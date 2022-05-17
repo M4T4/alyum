@@ -45,8 +45,9 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 gem 'bootstrap', '~> 5.1.3'
 # gem 'searchkick'
-gem 'ransack'
 gem 'pagy', '~> 5.10' # omit patch digit
+gem 'ransack'
+gem 'device_detector'
 # Use Sass to process CSS
 # gem "sassc-rails"
 

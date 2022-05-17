@@ -1,97 +1,16 @@
 <div id="<%= dom_id bibliographic_file %>">
-  <div class="card mb-3">
-  	<h5 class="card-header card-header-warning d-flex justify-content-between align-items-center bg-secondary">
-		  <span><%= link_to "Editar",  edit_bibliographic_file_path(bibliographic_file), class: "text-light" %></span>
-	  </h5>			
-    <div class="card-body">
-      <div class="row g-3 mb-3">
-
-        <div class="col-2">
-          <h6 class="card-subtitle mt-2 text-muted">Language y:</h6>
-          <p class="card-text"><%= bibliographic_file.language_y %></p>
-
-          <h6 class="card-subtitle mt-2 text-muted">Language y2:</h6>
-          <p class="card-text"><%= bibliographic_file.language_y2 %></p>
-
-          <h6 class="card-subtitle mt-2 text-muted">Researcher first name:</h6>
-          <p class="card-text"><%= bibliographic_file.researcher_first_name %></p>
-
-          <h6 class="card-subtitle mt-2 text-muted">Researcher last name:</h6>
-          <p class="card-text"><%= bibliographic_file.researcher_last_name %></p>
-        </div>
-        
-        <div class="col-2">
-          <h6 class="card-subtitle mt-2 text-muted">Gender:</h6>
-          <p class="card-text"><%= bibliographic_file.gender %></p>
-
-          <h6 class="card-subtitle mt-2 text-muted">Year:</h6>
-          <p class="card-text"><%= bibliographic_file.year %></p>
-
-          <h6 class="card-subtitle mt-2 text-muted">Ms:</h6>
-          <p class="card-text"><%= bibliographic_file.ms %></p>
-
-          <h6 class="card-subtitle mt-2 text-muted">Title:</h6>
-          <p class="card-text"><%= bibliographic_file.title %></p>
-        </div>
-
-        <div class="col-2">
-          <h6 class="card-subtitle mt-2 text-muted">Journal bookname:</h6>
-          <p class="card-text"><%= bibliographic_file.journal_bookname %></p>
-
-          <h6 class="card-subtitle mt-2 text-muted">Editor record:</h6>
-          <p class="card-text"><%= bibliographic_file.editor_record %></p>
-
-          <h6 class="card-subtitle mt-2 text-muted">Volume:</h6>
-          <p class="card-text"><%= bibliographic_file.volume %></p>
-
-          <h6 class="card-subtitle mt-2 text-muted">Volume number:</h6>
-          <p class="card-text"><%= bibliographic_file.volume_number %></p>
-        </div>
-
-        <div class="col-2">
-          <h6 class="card-subtitle mt-2 text-muted">Publisher:</h6>
-          <p class="card-text"><%= bibliographic_file.publisher %></p>
-
-          <h6 class="card-subtitle mt-2 text-muted">City country:</h6>
-          <p class="card-text"><%= bibliographic_file.city_country %></p>
-
-          <h6 class="card-subtitle mt-2 text-muted">Isbn:</h6>
-          <p class="card-text"><%= bibliographic_file.isbn %></p>
-
-          <h6 class="card-subtitle mt-2 text-muted">Issn:</h6>
-          <p class="card-text"><%= bibliographic_file.issn %></p>
-        </div>
-
-        <div class="col-2">
-          <h6 class="card-subtitle mt-2 text-muted">Tipo de documento:</h6>
-          <p class="card-text"><%= bibliographic_file.document_type %></p>
-          
-          <h6 class="card-subtitle mt-2 text-muted">Languaje del documento:</h6>
-          <p class="card-text"><%= bibliographic_file.document_language %></p>
-          
-          <h6 class="card-subtitle mt-2 text-muted">N1:</h6>
-          <p class="card-text"><%= bibliographic_file.n1 %></p>
-
-          <h6 class="card-subtitle mt-2 text-muted">N2:</h6>
-          <p class="card-text"><%= bibliographic_file.n2 %></p>
-        </div>
-
-        <div class="col-2">
-          <h6 class="card-subtitle mt-2 text-muted">doi:</h6>
-          <p class="card-text"><%= bibliographic_file.doi %></p>
-
-          <h6 class="card-subtitle mt-2 text-muted">Free lock:</h6>
-          <p class="card-text"><%= bibliographic_file.free_lock %></p>
-
-          <h6 class="card-subtitle mt-2 text-muted">Page number:</h6>
-          <p class="card-text"><%= bibliographic_file.page_number %></p>
-
-          <h6 class="card-subtitle mt-2 text-muted">Base:</h6>
-          <p class="card-text"><%= bibliographic_file.base %></p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
+  <tr>
+    <td><%= bibliographic_file.year %></td>
+    <td><%= resercher_full_name(bibliographic_file) %></td>
+    <td><%= bibliographic_file.gender %></td>
+    <td><%= bibliographic_file.ms %></td>
+    <td><%= bibliographic_file.language_y %></td>
+    <td><%= bibliographic_file.language_y %></td>
+    <td><%= bibliographic_file.title %></td>
+    <td><%= bibliographic_file.b_data %></td>
+    <td><%= bibliographic_file.n1 %></td>
+    <td><%= bibliographic_file.n2 %></td>
+    <td><%= bibliographic_file.document_language %></td>
+    <td><%= bibliographic_file.base %></td>
+  </tr>
 </div>
