@@ -12,9 +12,15 @@
 			<%= f.label "n1" %>		
 			<%= f.select(:n1_eq, options_for_select(BibliographicFile.n1s.map {|k, v| [k.humanize.capitalize, v]}, f.object.n1_eq), { include_blank: true }, {class: "form-select" }) %>
 
-			<%= f.label "language y" %>
-			<%= f.select(:language_y_eq, languages, { include_blank: true }, {class: "form-select" }) %>
+			<%= f.label "Lenguaje", class: "mt-3 mb-1" %>
+			<div class="mb-3">
+			<% languages.each do |lang| %>
+				<%= f.check_box :language_y_in, {multiple: true, class: "form-check-input"}, lang, nil %>
+				<%= lang %>
+			<% end %>
+			</div>
 			
+
 			<%= f.label "Busqueda" %>
 			<%= f.text_field :title_or_b_data_cont, class: 'form-control' %>
 			<%= f.submit "Buscar", class: 'btn btn-primary mt-3 mb-3' %>
