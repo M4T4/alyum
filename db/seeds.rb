@@ -28,55 +28,9 @@ csv.each do |row|
   t.acces_link = row['ACCESO']
   t.base = row['BASE']
   t.b_data = row['DATOS_B']
-
-  n1 = case row['N1']
-       when 'fonología'
-         0
-       when 'documentación'
-         1
-       when 'lexicosemántico'
-         2
-       when 'sintaxis'
-         3
-       when 'pragmática discursiva'
-         4
-       when 'morfología'
-         5
-       when 'descripción'
-         6
-       when 'pragmática'
-         7
-       when 'semantica'
-         8
-       else
-         9
-       end
-
-  n2 = case row['N2']
-       when 'fonología'
-         0
-       when 'documentación'
-         1
-       when 'lexicosemántico'
-         2
-       when 'sintaxis'
-         3
-       when 'pragmática discursiva'
-         4
-       when 'morfología'
-         5
-       when 'descripción'
-         6
-       when 'pragmática'
-         7
-       when 'semantica'
-         8
-       else
-         9
-       end
-
-  t.n1 = n1
-  t.n2 = n2
+  t.n1 = row['N1']
+  t.n2 = row['N2']
+  t.document_type = 'otro'
   t.save
 
   # t. 'journal_bookname'

@@ -2,7 +2,6 @@
 
 class BibliographicFilesController < ApplicationController
   before_action :set_bibliographic_file, only: %i[show edit update destroy]
-  before_action :set_bibliografic_files_values
 
   def index
     @q = BibliographicFile.ransack(params[:q])
@@ -45,12 +44,6 @@ class BibliographicFilesController < ApplicationController
 
   def set_bibliographic_file
     @bibliographic_file = BibliographicFile.find(params[:id])
-  end
-
-  def set_bibliografic_files_values
-    @document_types = BibliographicFile.document_types.keys
-    @n1s = BibliographicFile.n1s.keys
-    @n2s = BibliographicFile.n2s.keys
   end
 
   def bibliographic_file_params

@@ -38,16 +38,4 @@ en:
         chapter: Capítulo
         master_thesis: Tesis de maestría
         phd_thesis: Tesis de doctorado
-    n1:
-      statuses:
-        fonology: dsad
-        documentation: Documentación
-        lexicosemantic: dsad
-        syntax: dsad
-        discursive_pragmatic: dsad
-        morphology: dsad
-        description: Descripción
-        pragmatics: dsad
-        semantic: dsad
-        other: dsad
 

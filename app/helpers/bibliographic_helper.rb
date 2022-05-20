@@ -25,4 +25,20 @@ module BibliographicHelper
       'Yumanas'
     ]
   end
+
+  def n1s
+    [
+      'Descripción',
+      'Documentación',
+      'Fonología',
+      'Lexicosemántico',
+      'Morfología',
+      'Pragmática',
+      'Pragmática discursiva',
+      'Semantica',
+      'Sintaxis'
+    ]
+  end
+
+  # TODO: Ver si hay una manera mas elegante de hacer esto
 end
