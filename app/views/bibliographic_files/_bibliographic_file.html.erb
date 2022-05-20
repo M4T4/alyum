@@ -8,8 +8,8 @@
     <td><%= bibliographic_file.language_y %></td>
     <td><%= bibliographic_file.title %></td>
     <td><%= bibliographic_file.b_data %></td>
-    <td><%= bibliographic_file.n1 %></td>
-    <td><%= bibliographic_file.n2 %></td>
+    <td><%= bibliographic_file.n1.try(:capitalize) %></td>
+    <td><%= bibliographic_file.n2.try(:capitalize) %></td>
     <td><%= bibliographic_file.document_language %></td>
     <td><%= bibliographic_file.base %></td>
   </tr>

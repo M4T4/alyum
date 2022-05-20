@@ -1,16 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="card mb-3">
-  <div class="card-header">
+  <div class="card-header", style="background-color: #f68920;">
     Filtros
   </div>
   <div class="card-body">
-		<%= search_form_for @q do |f| %>
-			<%# f.label "Tipo de documento" %>
-			<%# f.select(:document_type_eq, options_for_select(BibliographicFile.document_types.map {|k, v| [t("document_types.#{k}"), v]}, f.object.document_type_eq), { include_blank: true }, {class: "form-select" }) %>
-					
+		<%= search_form_for @q do |f| %>					
 			<%= f.label "n1" %>
-			<%= f.select :n1_eq, options_for_select(n1s.map {|k, v| [k, v]}, f.object.n1_eq), { include_blank: true }, {class: "form-select" } %>
+			<%= f.select :n1_matches, n1s, { include_blank: true }, {class: "form-select" } %>
 			
 			<%= f.label "Lenguaje", class: "mt-3 mb-1" %>
 			<div class="mb-3">
