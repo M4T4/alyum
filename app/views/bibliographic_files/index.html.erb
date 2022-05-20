@@ -7,7 +7,7 @@
   <div class="card-body">
 		<%= search_form_for @q do |f| %>
 			<%= f.label "Tipo de documento" %>
-			<%= f.select(:document_type_eq, options_for_select(BibliographicFile.document_types.map {|k, v| [k.humanize.capitalize, v]}, f.object.document_type_eq), { include_blank: true }, {class: "form-select" }) %>
+			<%= f.select(:document_type_eq, options_for_select(BibliographicFile.document_types.map {|k, v| [t("document_types.#{k}"), v]}, f.object.document_type_eq), { include_blank: true }, {class: "form-select" }) %>
 					
 			<%= f.label "n1" %>		
 			<%= f.select(:n1_eq, options_for_select(BibliographicFile.n1s.map {|k, v| [k.humanize.capitalize, v]}, f.object.n1_eq), { include_blank: true }, {class: "form-select" }) %>
@@ -23,7 +23,7 @@
 
 			<%= f.label "Busqueda" %>
 			<%= f.text_field :title_or_b_data_cont, class: 'form-control' %>
-			<%= f.submit "Buscar", class: 'btn mt-3 mb-3', style: "background-color: #f68920;" %>
+			<%= f.submit "Buscar", class: 'btn btn-primary mt-3 mb-3' %>
 			<%= link_to "Limpiar", request.path, class: "btn btn-light mt-3 mb-3" %>
 		<% end %>
   </div>
@@ -41,5 +41,6 @@
 
 
 <div class="d-grid gap-2">
-	<%= link_to "Crear un nuevo archivo bibliografico", new_bibliographic_file_path, class: "btn mb-3", style: "background-color: #f68920;" %>
+	<%= link_to "Crear un nuevo archivo bibliografico", new_bibliographic_file_path, class: "btn btn-primary mb-3" %>
 </div>
+

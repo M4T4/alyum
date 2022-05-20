@@ -29,7 +29,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
+es:
   bibliographic_file:
     document_type:
       statuses:
@@ -41,12 +41,12 @@ en:
     n1:
       statuses:
         fonology: dsad
-        documentation: Documentación
+        documentation: dsad
         lexicosemantic: dsad
         syntax: dsad
         discursive_pragmatic: dsad
         morphology: dsad
-        description: Descripción
+        description: dsad
         pragmatics: dsad
         semantic: dsad
         other: dsad

@@ -1,3 +1,13 @@
+.btn-primary {
+	border-color: white;
+	background: #f68920;
+	color: white; // Or any other light color.
+	&:hover {
+		background-color: darken(#f68920, 8%);
+		border-color: white;
+	}
+}
+
 .page-item.active .page-link {
   color: #fff !important;
   background: #f68920 !important;
@@ -30,4 +40,24 @@
 {
     background-color: #f68920 !important;
     border: solid 1px #f68920 !important;
+}
+
+.footer {
+	height: 13rem;
+	bottom: 0;
+	color: white;
+	background-color: #000000;
+  text-align: center;
+  ul {
+    padding: 0;
+    margin-bottom: 0;
+    img {
+      margin: 0.5rem;
+    }
+	}
+	hr {
+		width: 25%;
+		margin: auto;
+
+	}
 }
