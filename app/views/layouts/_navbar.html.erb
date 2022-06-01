@@ -1,5 +1,31 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f68920 ;">
-  <div class="container-fluid justify-content-center align-items-center">
-    <%= image_tag "logo.jpg", width: 100 %>
-  </div>
+<nav class="navbar navbar-expand-lg navbar-light lined" style="background-color: #f68920;">
+    <a class="navbar-brand ms-3" href="#"><%= image_tag "logo.jpg", width: 125 %></a>
+    <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  ms-auto">
+            <li class="nav-item">
+            	<%= link_to "Inicio", root_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+							<%= link_to "Los Yumanos", yumans_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+							<%= link_to "Investigadores", researchers_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+							<%= link_to "Gráficas", graphs_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+							<%= link_to "Proyectos", projects_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+							<%= link_to "Nosotros", about_us_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+            </li>
+        </ul>
+    </div>
 </nav>

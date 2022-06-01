@@ -1,12 +1,18 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # devise_for :users
+  scope module: 'public' do
+    root to: 'home#index'
+    get 'about_us', to: 'home#about_us'
+    get 'yumans', to: 'home#yumans'
+    get 'researchers', to: 'home#researchers'
+    get 'projects', to: 'home#projects'
+    get 'graphs', to: 'home#graphs'
+    get 'bibliographic_search_engine', to: 'bibliographic_search_engine#index', as: :search_engine
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-  # root to: 'home#index'
-
-  resources :bibliographic_files
-  root to: 'bibliographic_files#index'
+  scope module: 'private' do
+    resources :bibliographic_files
+  end
 end

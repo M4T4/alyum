@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
-class BibliographicFilesController < ApplicationController
+class Private::BibliographicFilesController < ApplicationController
   before_action :set_bibliographic_file, only: %i[show edit update destroy]
 
   def index
     @q = BibliographicFile.ransack(params[:q])
     @pagy, @files = pagy(@q.result(distinct: true))
+    @results = @q.result.count
   end
 
   def show; end

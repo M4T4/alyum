@@ -45,11 +45,13 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 gem 'bootstrap', '~> 5.1.3'
 # gem 'searchkick'
+gem 'device_detector'
 gem 'pagy', '~> 5.10' # omit patch digit
 gem 'ransack'
-gem 'device_detector'
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sassc-rails"
+gem "chartkick"
+gem 'devise'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

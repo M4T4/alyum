@@ -1,3 +1,9 @@
+@media (max-width: 992px){
+	.navbar-nav {
+			text-align: center;
+	}
+}
+
 .btn-primary {
 	border-color: white;
 	background: #f68920;
@@ -43,11 +49,14 @@
 }
 
 .footer {
+  position: relative;
+  width: 100%;
 	height: 13rem;
 	bottom: 0;
 	color: white;
 	background-color: #000000;
   text-align: center;
+
   ul {
     padding: 0;
     margin-bottom: 0;
@@ -55,9 +64,27 @@
       margin: 0.5rem;
     }
 	}
+  
 	hr {
 		width: 25%;
 		margin: auto;
 
 	}
 }
+
+.navbar .navbar-nav .nav-link {
+  background-color: #f68920;
+  color: #000000;
+  font-size: 1.1em;
+}
+.navbar .navbar-nav .nav-link:hover{
+  color: #808080;
+}
+.navbar-logo-centered .navbar-nav .nav-link{
+  padding: .5em 1em;
+}
+
+.hidden {
+  display: none;
+}
+
