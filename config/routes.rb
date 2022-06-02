@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # devise_for :users
   scope module: 'public' do
     root to: 'home#index'
     get 'about_us', to: 'home#about_us'
@@ -14,5 +13,9 @@ Rails.application.routes.draw do
 
   scope module: 'private' do
     resources :bibliographic_files
+  end
+
+  devise_for :users do
+    get '/users/sign_out' => 'devise/sessions#destroy'
   end
 end
