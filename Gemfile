@@ -49,9 +49,9 @@ gem 'device_detector'
 gem 'pagy', '~> 5.10' # omit patch digit
 gem 'ransack'
 # Use Sass to process CSS
-gem "sassc-rails"
-gem "chartkick"
+gem 'chartkick'
 gem 'devise'
+gem 'sassc-rails'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

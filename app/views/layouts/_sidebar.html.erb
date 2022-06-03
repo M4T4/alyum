@@ -1,0 +1,29 @@
+<div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0  flex-shrink-0 text-white bg-dark sticky-top h-100">
+  <div class="d-flex flex-column px-3 pt-2 text-white bg-dark text-white vh-100">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <span class="fs-3 pt-3">Menu admin</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto fs-4">
+      <li class="nav-item">
+				<%= link_to "Archivos bibliográficos", admin_bibliographic_files_path, class: "nav-link text-white #{current? "active",  admin_bibliographic_files_path}" %>
+      </li>
+      <li>
+				<%= link_to "Usuarios", admin_users_path, class: "nav-link text-white #{current? "active", root_path}" %>
+      </li>
+    </ul>
+    <hr>
+    <div class="dropdown pb-3">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <%= current_user.email %>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+        <li><a class="dropdown-item" href="#">New project...</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -8,6 +8,7 @@
             <h3 class="text-center">Iniciar sesión</h3>
 
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
               <div class="form-floating mb-3">
                 <div class="field mb-3">
                   <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control rounded btn btn-lg", style:"border-color: #FF5678", placeholder: "Correo" %>

@@ -32,15 +32,12 @@
                     <b><%= current_user.email %></b>
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <%= link_to edit_user_registration_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
-                      <div class="fa fa-cog"></div>
-                      <b>Account settings</b>
-                    <% end %>
+                    <%= link_to "Editar cuenta", edit_user_registration_path, class: "fa fa-cog dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" %>
                     <%= link_to "Salir", destroy_user_session_path, 'data-turbo-method': :get, class: "fa fa-sign-out-alt dropdown-item" %>
                   </ul>
                 </li>
               <% else %>
-                <%= link_to "Log in", new_user_session_path, class: "btn btn-primary #{'active fw-bold' if current_page?(new_user_session_path)}" %>
+                <%= link_to "Ingresar", new_user_session_path, class: "btn btn-primary #{'active fw-bold' if current_page?(new_user_session_path)}" %>
               <% end %>
             </li>
         </ul>

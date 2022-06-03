@@ -23,6 +23,7 @@
 			<%= f.submit "Buscar", class: 'btn btn-primary mt-3 mb-3' %>
 			<%= link_to "Limpiar", request.path, class: "btn btn-light mt-3 mb-3" %>
 		<% end %>
+		<p>Hay <%= @results %> resultados </p>
   </div>
 </div>
 
@@ -35,9 +36,4 @@
 
 
 <%== pagy_bootstrap_nav(@pagy) %>
-
-
-<div class="d-grid gap-2">
-	<%= link_to "Crear un nuevo archivo bibliografico", new_bibliographic_file_path, class: "btn btn-primary mb-3" %>
-</div>
 

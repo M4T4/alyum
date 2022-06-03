@@ -11,11 +11,12 @@ Rails.application.routes.draw do
     get 'bibliographic_search_engine', to: 'bibliographic_search_engine#index', as: :search_engine
   end
 
-  scope module: 'private' do
-    resources :bibliographic_files
-  end
-
   devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
+  namespace :admin do
+    resources :bibliographic_files
+    resources :users
   end
 end

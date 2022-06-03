@@ -13,6 +13,5 @@ module Public
     def projects; end
 
     def graphs; end
-    
   end
 end
