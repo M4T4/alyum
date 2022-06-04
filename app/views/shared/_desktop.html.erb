@@ -18,7 +18,7 @@
 	</thead>
 	<tbody>
 		<% @files.each do |file| %>
-			<%= render partial: "admin/bibliographic_files/bibliographic_file", object: file %>
+			<%= render partial: "shared/bibliographic_file", object: file %>
 		<% end %>
 	</tbody>
 </table>

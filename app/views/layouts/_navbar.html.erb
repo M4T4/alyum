@@ -33,6 +33,7 @@
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <%= link_to "Editar cuenta", edit_user_registration_path, class: "fa fa-cog dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" %>
+                    <%= link_to "Administrador", admin_bibliographic_files_path, class: "fa fa-cog dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" %>
                     <%= link_to "Salir", destroy_user_session_path, 'data-turbo-method': :get, class: "fa fa-sign-out-alt dropdown-item" %>
                   </ul>
                 </li>
