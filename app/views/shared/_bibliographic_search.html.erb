@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="card mb-3">
-  <div class="card-header", style="background-color: #f68920;">
+  <div class="card-header bg-primary">
     Filtros
   </div>
   <div class="card-body">
@@ -13,7 +13,7 @@
 			<div class="mb-3">
 			<% languages.each do |lang| %>
 				<%= lang %>
-				<%= f.check_box :language_y_in, {multiple: true, class: "form-check-input me-4", style: "background-color: #f68920;"}, lang, nil %>
+				<%= f.check_box :language_y_in, {multiple: true, class: "form-check-input me-4"}, lang, nil %>
 			<% end %>
 			</div>
 			
