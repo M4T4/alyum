@@ -42,10 +42,10 @@ module BibliographicHelper
 
   def document_types
     [
-      'Artículo', 
-      'Libro', 
-      'Capítulo', 
-      'Tesis Maestría', 
+      'Artículo',
+      'Libro',
+      'Capítulo',
+      'Tesis Maestría',
       'Tesis Doctorado'
     ]
   end

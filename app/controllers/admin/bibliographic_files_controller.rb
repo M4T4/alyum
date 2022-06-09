@@ -23,7 +23,7 @@ module Admin
 
       if @bibliographic_file.save
         notice = 'La ficha fue creada exitosamente'
-        redirect_to action: 'index', notice: notice
+        redirect_to admin_bibliographic_files_path, notice: notice
       else
         render :new, status: :unprocessable_entity
       end
@@ -32,7 +32,7 @@ module Admin
     def update
       if @bibliographic_file.update(bibliographic_file_params)
         notice = 'La ficha fue actualizada exitosamente'
-        redirect_to action: 'index', notice: notice
+        redirect_to admin_bibliographic_files_path, notice: notice
       else
         render :edit, status: :unprocessable_entity
       end
@@ -49,7 +49,7 @@ module Admin
     end
 
     def bibliographic_file_params
-      params.require(:bibliographic_file).permit(:id, :language_y, :language_y2, :researcher_first_name,
+      params.require(:bibliographic_file).permit(:id, :language_y, :language_y2, :researcher_first_name, :document_language,
                                                  :researcher_last_name, :gender, :year, :ms, :title, :journal_bookname, :editor_record, :volume, :volume_number, :publisher, :city_country, :isbn, :issn, :doi, :document_type, :country, :acces_link, :free_lock, :n1, :n2, :page_number, :base)
     end
   end

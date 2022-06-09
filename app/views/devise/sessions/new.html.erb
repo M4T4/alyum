@@ -3,13 +3,14 @@
     <div id="login-row" class="row justify-content-center align-items-center">
       <div id="login-column" class="col-md-5">
         <div id="login-box" class="col-md-12">
-          <form id="login-form" class="form" action="" method="post">
+          <div id="login-form" class="form" action="" method="post">
 
             <h3 class="text-center">Iniciar sesión</h3>
 
-            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <%= render "devise/shared/error_messages", resource: resource %>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
+            
               <div class="form-floating mb-3">
+              <%= render "devise/shared/error_messages", resource: resource %>
                 <div class="field mb-3">
                   <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control rounded btn btn-lg", style:"border-color: #FF5678", placeholder: "Correo" %>
                 </div>
@@ -31,7 +32,7 @@
               </div>
             <% end %>
             <%= render "devise/shared/links" %>
-          </form>
+          </div>
         </div>
       </div>
     </div>

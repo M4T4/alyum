@@ -14,7 +14,12 @@
       <div class="row flex-nowrap">
         <%= render 'layouts/sidebar' %>
         <div class="col p-3">
+          <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type == "alert" ? "danger" : "success" %> mt-3"><%= message %></div>
+          <% end %>
+          <br />
           <%= yield %>
+          <%= turbo_frame_tag "remote_modal" %>
         </div>
       </div>
     </div>
