@@ -1,0 +1,78 @@
+<div class="p-0">
+  <div class="row">
+    <div class="col-6">
+      <h1 class="align-items-start display-1">Lista de Investigadores</h1>
+			<p class="display-3">
+				Praesent gravida purus. Vitae erat hendrerit dictum.
+				Fusce id libero sodales elit congue.
+			</p>
+    </div>
+		<div class="col-1"></div>
+    <div class="col my-auto">
+			<%= image_tag("public/drawings/flower.svg", width: 150) %>
+    </div>
+  </div>
+
+	<div class="row" style="background: black">
+		<hr/>
+		<hr/>
+		<hr/>
+	</div>
+
+	<div class="row p-5" style="background: white">
+		<%= render(CardComponent.new(title: "Aliquam Sed Massa", image_url: "public/researchers/massa.jpg")) do %>
+			<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit elementum nisi in pulvinar. 
+			Pellentesque id sagittis orci. Donec ultrices metus ut magna vehicula, non pharetra felis vulputate. 
+			Sed porttitor ultricies lobortis. Maecenas et congue felis. Quisque eleifend lectus in pharetra pretium. 
+			</p>
+			<p>
+			Donec porttitor consectetur enim, eu venenatis purus feugiat id. Pellentesque aliquam diam id feugiat euismod. 
+			Aenean semper nisl non massa vestibulum mattis. Donec vehicula maximus odio et vulputate. Praesent congue nulla 
+			ac leo eleifend iaculis. Pellentesque venenatis metus sit amet libero congue imperdiet. Vestibulum suscipit 
+			lectus sed nulla dapibus ornare. Sed vehicula auctor aliquet.
+			</p>
+			<p>
+			Pellentesque sapien mauris, dapibus in ex at, tincidunt aliquam turpis. Nulla facilisi. Nulla id massa eu velit 
+			ultrices congue. In magna metus, feugiat eget orci et, bibendum aliquam tortor. Maecenas venenatis tincidunt 
+			tellus ut pellentesque. Proin vitae dui et neque hendrerit aliquam. 
+			</p>
+		<% end %>
+		<%= render(CardComponent.new(title: "Etiam Vestibulum", image_url: "public/researchers/etiam.jpg")) do %>
+			<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit elementum nisi in pulvinar. 
+			Pellentesque id sagittis orci. Donec ultrices metus ut magna vehicula, non pharetra felis vulputate. 
+			Sed porttitor ultricies lobortis. Maecenas et congue felis. Quisque eleifend lectus in pharetra pretium. 
+			</p>
+			<p>
+			Donec porttitor consectetur enim, eu venenatis purus feugiat id. Pellentesque aliquam diam id feugiat euismod. 
+			Aenean semper nisl non massa vestibulum mattis. Donec vehicula maximus odio et vulputate. Praesent congue nulla 
+			ac leo eleifend iaculis. Pellentesque venenatis metus sit amet libero congue imperdiet. Vestibulum suscipit 
+			lectus sed nulla dapibus ornare. Sed vehicula auctor aliquet.
+			</p>
+			<p>
+			Pellentesque sapien mauris, dapibus in ex at, tincidunt aliquam turpis. Nulla facilisi. Nulla id massa eu velit 
+			ultrices congue. In magna metus, feugiat eget orci et, bibendum aliquam tortor. Maecenas venenatis tincidunt 
+			tellus ut pellentesque. Proin vitae dui et neque hendrerit aliquam. 
+			</p>
+		<% end %>
+		<%= render(CardComponent.new(title: "Nulla Nunc", image_url: "public/researchers/nulla.jpg")) do %>
+			<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit elementum nisi in pulvinar. 
+			Pellentesque id sagittis orci. Donec ultrices metus ut magna vehicula, non pharetra felis vulputate. 
+			Sed porttitor ultricies lobortis. Maecenas et congue felis. Quisque eleifend lectus in pharetra pretium. 
+			</p>
+			<p>
+			Donec porttitor consectetur enim, eu venenatis purus feugiat id. Pellentesque aliquam diam id feugiat euismod. 
+			Aenean semper nisl non massa vestibulum mattis. Donec vehicula maximus odio et vulputate. Praesent congue nulla 
+			ac leo eleifend iaculis. Pellentesque venenatis metus sit amet libero congue imperdiet. Vestibulum suscipit 
+			lectus sed nulla dapibus ornare. Sed vehicula auctor aliquet.
+			</p>
+			<p>
+			Pellentesque sapien mauris, dapibus in ex at, tincidunt aliquam turpis. Nulla facilisi. Nulla id massa eu velit 
+			ultrices congue. In magna metus, feugiat eget orci et, bibendum aliquam tortor. Maecenas venenatis tincidunt 
+			tellus ut pellentesque. Proin vitae dui et neque hendrerit aliquam. 
+			</p>
+		<% end %>
+	</div>
+</div>
