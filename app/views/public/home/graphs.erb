@@ -1,16 +1,41 @@
-<p class="display-4 text-center" style="padding-right: 40px; padding-left: 40px;">
-	Distribución de los trabajos de investigación yumana
-</p>
-<%= column_chart BibliographicFile.order('year ASC').group(:year).count, colors: ["#b00"] %>
+<div class="p-0">
+  <div class="row">
+    <div class="col-8">
+      <h1 class="align-items-start display-1">Gráficas</h1>
+			<p class="display-3">
+				Aliquam erat volutpat. Praesent gravida purus. 
+			</p>
+    </div>
+		<div class="col-1"></div>
+    <div class="col my-auto pb-2">
+			<%= image_tag("public/drawings/comet.svg", width: 122) %>
+    </div>
+  </div>
 
-<p class="display-4 text-center mt-5" style="padding-right: 40px; padding-left: 40px;">
-	Cantidad de trabajos lingüísticos de las lenguas yumanas
-</p>
+	<div class="row bg-black">
+		<hr/>
+		<hr/>
+		<hr/>
+	</div>
 
-<%= column_chart BibliographicFile.group(:language_y).count, colors: ["#666"] %>
+	<div class="row bg-white py-5 justify-content-center">
+		<div class="col-11">
+			<p class="display-4 text-center" style="padding-right: 40px; padding-left: 40px;">
+				Distribución de los trabajos de investigación yumana
+			</p>
+			<%= column_chart BibliographicFile.order('year ASC').group(:year).count, colors: ["#b00"] %>
 
-<p class="display-4 text-center mt-5" style="padding-right: 40px; padding-left: 40px;">
-	Cantidad de trabajos por nivel de lengua
-</p>
+			<p class="display-4 text-center mt-5" style="padding-right: 40px; padding-left: 40px;">
+				Cantidad de trabajos lingüísticos de las lenguas yumanas
+			</p>
 
-<%= column_chart BibliographicFile.group(:n1).count %>
+			<%= column_chart BibliographicFile.group(:language_y).count, colors: ["#666"] %>
+
+			<p class="display-4 text-center mt-5" style="padding-right: 40px; padding-left: 40px;">
+				Cantidad de trabajos por nivel de lengua
+			</p>
+
+			<%= column_chart BibliographicFile.group(:n1).count %>
+		</div>
+	</div>
+</div>
