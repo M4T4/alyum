@@ -1,22 +1,20 @@
 <main class="form-signin">
+  <h1 class="align-items-start display-1">Iniciar sesión</h1>
   <div class="container">
     <div id="login-row" class="row justify-content-center align-items-center">
       <div id="login-column" class="col-md-5">
         <div id="login-box" class="col-md-12">
           <div id="login-form" class="form" action="" method="post">
 
-            <h3 class="text-center">Iniciar sesión</h3>
-
-            <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
-            
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>  
               <div class="form-floating mb-3">
               <%= render "devise/shared/error_messages", resource: resource %>
                 <div class="field mb-3">
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control rounded btn btn-lg", style:"border-color: #FF5678", placeholder: "Correo" %>
+                  <%= f.email_field :email, autofocus: true, class: "form-control rounded btn btn-lg rounded-pill", style:"border-color: #D9D9D9; background-color: white", placeholder: "Email" %>
                 </div>
 
                 <div class="field mb-3">
-                  <%= f.password_field :password, autocomplete: "current-password", class: "form-control btn btn-lg", style:"border-color: #FF5678", placeholder: "Contraseña" %>
+                  <%= f.password_field :password, class: "form-control btn btn-lg rounded-pill", style:"border-color: #D9D9D9; background-color: white", placeholder: "Contraseña" %>
                 </div>
 
                 <% if devise_mapping.rememberable? %>
@@ -27,7 +25,7 @@
                 <% end %>
 
                 <div class="actions">
-                  <%= f.submit "Ingresar", class: "form-control btn-lg btn-primary" %>
+                  <%= f.submit "Ingresar", class: "form-control btn-lg btn-primary rounded-pill", style:"background-color: black; border-color: black" %>
                 </div>
               </div>
             <% end %>
