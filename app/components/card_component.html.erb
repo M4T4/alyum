@@ -1,0 +1,18 @@
+<div class="card my-5 w-100 p-3">
+	<div class="row g-0">
+		<div class="col-md-4 py-5 justify-content-center d-flex">
+			<%= image_tag("#{@image_url}", class: "img-fluid") %>
+		</div>
+
+		<div class="col-auto d-lg-flex p-3 d-none d-lg-block h-auto pe-xxl-5">
+			<div class="vr" style="width: 2px"></div>
+		</div>
+
+		<div class="col-md-7 py-5">
+			<div class="card-body">
+				<h5 class="card-title display-4"><%= @title %></h5>
+				<div class="card-text fs-4"><%= content %></div>
+			</div>
+		</div>
+	</div>
+</div>
