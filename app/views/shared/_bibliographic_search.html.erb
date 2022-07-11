@@ -1,4 +1,4 @@
-<div class="card mb-3">
+<div class="card mb-3 px-0">
   <div class="card-header bg-primary">
     Filtros
   </div>
@@ -31,5 +31,6 @@
 	<%= render partial: 'shared/mobile' %>
 <% end %>
 
-
-<%== pagy_bootstrap_nav(@pagy) %>
+<div class="d-flex justify-content-center">
+	<%== pagy_bootstrap_nav(@pagy) %>
+</div>

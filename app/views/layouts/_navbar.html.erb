@@ -22,6 +22,9 @@
       <li class="nav-item mx-4">
         <%= link_to "Nosotros", about_us_path, class: "nav-link" %>
       </li>
+      <li class="nav-item mx-4">
+        <%= link_to "Ir Busqueda avanzada", search_engine_path, class: "nav-link" %>
+      </li>
       <li class="nav-item d-lg-none">
         <% if current_user %>
           <li class="nav-item dropdown d-lg-none">
@@ -43,8 +46,8 @@
   </div>
 </nav>
 
-<nav class="navbar navbar-expand-lg navbar-light lined" style="background-color: white;">
-  <%= link_to image_tag("public/navbar/logo.jpg", width: 200), root_path, class: "navbar-brand ms-5" %>
+<nav class="navbar navbar-expand-lg navbar-light lined <%= current_page?(search_engine_path) ? 'bg-primary' : 'bg-white' %>">
+  <%= link_to image_tag("public/navbar/logo.png", width: 200), root_path, class: "navbar-brand ms-5" %>
   <ul class="navbar-nav  ms-auto  align-items-center">
 
     <li class="nav-item ms-3 d-none d-lg-block">
