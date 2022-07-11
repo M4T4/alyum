@@ -1,5 +1,5 @@
 <div class="py-3">
-  <%= form_with(model: @bibliographic_file, url: admin_bibliographic_files_path) do |form| %>
+  <%= form_with(model: @bibliographic_file, url: url) do |form| %>
     <div class="error_explanation">
       <% if @bibliographic_file.errors.any? %>
         <div style="color: red">

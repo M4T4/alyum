@@ -2,6 +2,7 @@
 <table class="table">
 	<thead>
 		<tr>
+			<th scope="col"><%= sort_link(@q, :id, "Id", default_order: :asc) %></th>
 			<th scope="col"><%= sort_link(@q, :year, "Año", default_order: :asc) %></th>
 			<th scope="col">Investigador</th>
 			<th scope="col"><%= sort_link(@q, :gender, "Género", default_order: :asc) %></th>

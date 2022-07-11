@@ -2,6 +2,7 @@
 
 <div id="<%= dom_id bibliographic_file %>">
   <tr>
+    <td><%= bibliographic_file.id %></td>
     <td><%= bibliographic_file.year %></td>
     <td><%= resercher_full_name(bibliographic_file) %></td>
     <td><%= bibliographic_file.gender %></td>
@@ -14,5 +15,12 @@
     <td><%= bibliographic_file.n2.try(:capitalize) %></td>
     <td><%= bibliographic_file.document_language %></td>
     <td><%= bibliographic_file.base %></td>
+    <% if current_page?(admin_bibliographic_files_path) %>
+      <td>
+      <%= link_to edit_admin_bibliographic_file_path(bibliographic_file), "data-controller": "turbo" do %>
+        <i class="bi bi-files" style="color:black"></i>
+      <% end %>
+      </td>
+    <% end %>
   </tr>
 </div>
