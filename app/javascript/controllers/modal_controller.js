@@ -4,7 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   connect() {
     this.modal = new bootstrap.Modal(this.element, {
-      keyboard: false
+      keyboard: true
     })
     this.modal.show()
   }

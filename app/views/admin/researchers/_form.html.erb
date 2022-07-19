@@ -8,13 +8,13 @@
     <%= form.text_field :contact_email, class: "form-control" %>  
   </div>
   <div class="mb-3">
-    <%= form.label "Imagen del curso", class: "form-label" %>
+    <%= form.label "Foto de usuario", class: "form-label" %>
     <%= form.file_field :image, direct_upload: true, class: "form-control" %>
   </div>
 
   <%= form.hidden_field :user_id, value: current_user.id %>
   
   <div class="text-center">
-    <%= form.submit "Crear curso", class: "btn btn-primary text-center" %>
+    <%= form.submit "Agregar investigador", class: "btn btn-primary text-center" %>
   </div>
 <% end %>

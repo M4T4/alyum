@@ -1,0 +1,9 @@
+<%= turbo_stream.replace "remote_modal" do %>
+  <%= render partial: "shared/form_modal", 
+	locals: { 
+		url: admin_bibliographic_files_path,
+		partial: 'shared/card',
+		title: 'Perfil del investigador',
+		size: 'modal-fullscreen'
+	} %>
+<% end %>

@@ -8,7 +8,7 @@
 	</tr>
 	<% @researchers.each do |researcher|  %>
 		<tr>
-			<td><%= link_to researcher.contact_email, admin_researcher_path(researcher) %></td>
+			<td><%= link_to researcher.contact_email, admin_researcher_path(researcher), "data-controller": "turbo" %></td>
 			<td><%= researcher.created_at %></td>
 			      <td>
       <%= link_to edit_admin_researcher_path(researcher), "data-controller": "turbo" do %>
@@ -20,5 +20,5 @@
 </table>
 
 <div class="text-center">
-	<%= link_to "Crear nuevo investigador", new_admin_researcher_path, class: 'btn btn-primary '%>
+	<%= link_to "Crear nuevo investigador", new_admin_researcher_path, "data-controller": "turbo", class: 'btn btn-primary '%>
 </div>

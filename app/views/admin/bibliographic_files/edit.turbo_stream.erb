@@ -1,3 +1,8 @@
 <%= turbo_stream.replace "remote_modal" do %>
-  <%= render partial: "shared/form_modal", locals: { url: admin_bibliographic_file_path(@bibliographic_file) } %>
+  <%= render partial: "shared/form_modal", 
+  locals: { 
+    url: admin_bibliographic_files_path,
+    partial: 'shared/form',
+    title: "Pendiente"
+  } %>
 <% end %>

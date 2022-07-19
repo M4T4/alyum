@@ -2,6 +2,7 @@
 
 module Admin
   class ResearchersController < BaseController
+    before_action :set_researcher, only: %i[show edit update destroy]
 
     def index
       @researchers = Researcher.all
@@ -11,20 +12,26 @@ module Admin
       @researcher = Researcher.new
     end
 
-    def show
-      @researcher = Researcher.find(params[:id])
-    end
+    def edit; end
+
+    def show; end
 
     def create
       @researcher = Researcher.new(researcher_params)
       if @researcher.save
-        redirect_to  root_path(@researcher.id), notice: 'El curso ha sido creado'
+        redirect_to  root_path(@researcher.id), notice: 'Se ha agregado el investigador'
       else
         render :new, status: :unprocessable_entity
       end
     end
+
+    def update; end
     
     private
+
+    def set_researcher
+      @researcher = Researcher.find(params[:id])
+    end
 
     def researcher_params
       params.fetch(:researcher).permit(
