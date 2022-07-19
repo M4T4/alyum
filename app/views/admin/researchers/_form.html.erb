@@ -1,0 +1,20 @@
+<%= form_with model: @researcher, url: url do |form| %>
+  <div class="mb-3">
+    <%= form.label "Descripción académica", class: "form-label" %>
+    <%= form.text_area :academic_description, class: "form-control", rows: "3"%>
+  </div>
+  <div class="mb-3">
+    <%= form.label "Correo de contacto", class: "form-label" %>
+    <%= form.text_field :contact_email, class: "form-control" %>  
+  </div>
+  <div class="mb-3">
+    <%= form.label "Imagen del curso", class: "form-label" %>
+    <%= form.file_field :image, direct_upload: true, class: "form-control" %>
+  </div>
+
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  
+  <div class="text-center">
+    <%= form.submit "Crear curso", class: "btn btn-primary text-center" %>
+  </div>
+<% end %>
