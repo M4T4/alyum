@@ -1,5 +1,5 @@
 <%= turbo_frame_tag :remote_modal, target: :_top do %>
-  <div class="modal fade" data-controller="modal" >
+  <div class="modal fade" data-controller="modal" tabindex="-1" >
     <div class="modal-dialog <%= defined?(size).nil? ? '' : size %>">
       <div class="modal-content">
         <div class="modal-header">
@@ -7,7 +7,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <%= render partial: partial,  locals: { url: url } %>
+          <%= render partial: partial, locals: { url: url } %>
         </div>
       </div>
     </div>

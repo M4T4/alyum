@@ -1,20 +1,42 @@
 <%= form_with model: @researcher, url: url do |form| %>
   <div class="mb-3">
-    <%= form.label "Descripción académica", class: "form-label" %>
-    <%= form.text_area :academic_description, class: "form-control", rows: "3"%>
+    <%= form.label "Nombre", class: "form-label" %>
+    <%= form.text_field :first_name, class: "form-control" %>  
+  </div>
+  <div class="mb-3">
+    <%= form.label "Apellido", class: "form-label" %>
+    <%= form.text_field :last_name, class: "form-control" %>  
+  </div>
+  <div class="mb-3">
+    <%= form.label "Enlace de página web", class: "form-label" %>
+    <%= form.text_field :website_link, class: "form-control" %>  
   </div>
   <div class="mb-3">
     <%= form.label "Correo de contacto", class: "form-label" %>
     <%= form.text_field :contact_email, class: "form-control" %>  
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label "Lenguaje principal", class: "form-label" %>
+      <%= form.select :main_language, languages, { include_blank: "- Lenguaje -"}, {:class => "form-select"}  %>
+    </div> 
+    <div class="col-6">
+      <%= form.label "Nivel de lenguaje", class: "form-label" %>
+      <%= form.select :main_language_level, language_levels, { include_blank: "- Nivel -"}, {:class => "form-select"}  %>
+    </div>	
+  </div>
+  <div class="mb-3">
+    <%= form.label "Descripción académica", class: "form-label" %>
+    <%= form.text_area :academic_description, class: "form-control", rows: "3"%>
   </div>
   <div class="mb-3">
     <%= form.label "Foto de usuario", class: "form-label" %>
     <%= form.file_field :image, direct_upload: true, class: "form-control" %>
   </div>
 
-  <%= form.hidden_field :user_id, value: current_user.id %>
-  
-  <div class="text-center">
-    <%= form.submit "Agregar investigador", class: "btn btn-primary text-center" %>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+    <%= form.submit "Agregar investigador", class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -10,10 +10,10 @@
 		<tr>
 			<td><%= link_to researcher.contact_email, admin_researcher_path(researcher), "data-controller": "turbo" %></td>
 			<td><%= researcher.created_at %></td>
-			      <td>
-      <%= link_to edit_admin_researcher_path(researcher), "data-controller": "turbo" do %>
-        <i class="bi bi-files" style="color:black"></i>
-      <% end %>
+			<td>
+				<%= link_to edit_admin_researcher_path(researcher), "data-controller": "turbo" do %>
+					<i class="bi bi-files" style="color:black"></i>
+				<% end %>
       </td>
 		</tr>
 	<% end %>

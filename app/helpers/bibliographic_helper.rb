@@ -26,6 +26,10 @@ module BibliographicHelper
     ]
   end
 
+  def language_levels
+    [ 'n1', 'n2' ]
+  end
+
   def n1s
     [
       'Descripción',
