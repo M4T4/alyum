@@ -78,8 +78,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_19_013435) do
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
     t.string "academic_description", default: "", null: false
-    t.integer "main_language", default: 0, null: false
-    t.integer "main_language_level", default: 0, null: false
+    t.string "main_language", default: "", null: false
+    t.string "main_language_level", default: "", null: false
     t.string "contact_email", default: "", null: false
     t.string "website_link", default: "", null: false
     t.bigint "user_id"

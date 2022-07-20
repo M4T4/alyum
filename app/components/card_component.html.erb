@@ -1,7 +1,7 @@
 <div class="card my-5 w-100 p-3">
 	<div class="row g-0">
 		<div class="col-md-4 py-5 justify-content-center d-flex">
-			<%= image_tag("#{@image_url}", class: "img-fluid") %>
+			<%= image_tag(@image_url, class: "img-fluid") %>
 		</div>
 
 		<div class="col-auto d-lg-flex p-3 d-none d-lg-block h-auto pe-xxl-5">
@@ -10,8 +10,23 @@
 
 		<div class="col-md-7 py-5">
 			<div class="card-body">
-				<h5 class="card-title display-4"><%= @title %></h5>
-				<div class="card-text fs-4"><%= content %></div>
+				<h5 class="card-title display-4"><%= @name %></h5>
+				<p class="h3 link-info"><%= @website_link %></p>
+				<p class="h3 text-muted"><%= @email %></p>
+				<% if device == "desktop" %>
+					<div class="card-text fs-4"><%= alt_description %></div>
+					<div class="card-text fs-4"><strong>Lenguaje principal:</strong> <%= @language %></div>
+					<div class="card-text fs-4"><strong>Nivel de lenguaje:</strong> <%= @level %></div>
+				<% else %>
+					<div class="card-text fs-4"><strong>Lenguaje principal:</strong> <%= @language %></div>
+					<div class="card-text fs-4"><strong>Nivel de lenguaje:</strong> <%= @level %></div>
+					<a class="h3" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+						Ver descripción académica
+					</a>
+					<div class="collapse" id="collapseExample">
+						<div class="card card-body fs-4"><%= alt_description %></div>
+					</div>
+				<% end %>
 			</div>
 		</div>
 	</div>

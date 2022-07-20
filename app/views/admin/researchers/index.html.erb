@@ -2,14 +2,20 @@
 
 <table class="table table-striped">  
 	<tr>
+		<th scope="col">Nombre</th>
+		<th scope="col">Lenguaje</th>
+		<th scope="col">Nivel</th>
 		<th scope="col">Correo</th>
-		<th scope="col">Fecha de creación</th>
+		<th scope="col">Página web</th>
 		<th></th>
 	</tr>
 	<% @researchers.each do |researcher|  %>
 		<tr>
-			<td><%= link_to researcher.contact_email, admin_researcher_path(researcher), "data-controller": "turbo" %></td>
-			<td><%= researcher.created_at %></td>
+			<td><%= link_to full_name(researcher), admin_researcher_path(researcher), "data-controller": "turbo" %></td>
+			<td><%= researcher.main_language %></td>
+			<td><%= researcher.main_language_level %></td>
+			<td><%= researcher.contact_email %></td>
+			<td><%= researcher.website_link %></td>
 			<td>
 				<%= link_to edit_admin_researcher_path(researcher), "data-controller": "turbo" do %>
 					<i class="bi bi-files" style="color:black"></i>

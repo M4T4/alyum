@@ -8,7 +8,9 @@ module Public
 
     def yumans; end
 
-    def researchers; end
+    def researchers
+      @researchers = Researcher.all
+    end
 
     def projects; end
 

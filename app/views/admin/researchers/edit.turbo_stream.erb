@@ -1,8 +1,8 @@
 <%= turbo_stream.replace "remote_modal" do %>
   <%= render partial: "shared/form_modal", 
 	locals: { 
-		url: admin_researchers_path,
+		url: admin_researcher_path(@researcher),
 		partial: 'admin/researchers/form',
-		title: 'Crear nuevo investigador'
+		title: 'Editar investigador'
 	} %>
 <% end %>

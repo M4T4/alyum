@@ -25,7 +25,13 @@ module Admin
       end
     end
 
-    def update; end
+    def update
+      if @researcher.update(researcher_params)
+        redirect_to  admin_researchers_path, notice: 'Se ha actualizado el investigador exitosamente'
+      else
+        render :edit, status: :unprocessable_entity
+      end
+    end
     
     private
 
@@ -35,7 +41,7 @@ module Admin
 
     def researcher_params
       params.fetch(:researcher).permit(
-        :academic_description, :main_language, :main_language_level, 
+        :id, :academic_description, :main_language, :main_language_level, 
         :contact_email, :user_id, :image, :first_name, :last_name, :website_link
       )    
     end
