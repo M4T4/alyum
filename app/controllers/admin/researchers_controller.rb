@@ -16,8 +16,17 @@ module Admin
 
     def show; end
 
+    def user_researcher
+      @users = User.all
+    end
+
     def create
-      @researcher = Researcher.new(researcher_params)
+      if params[:researcher].nil?
+        @researcher = user_researcher
+      else
+        @researcher = Researcher.new(researcher_params)
+      end
+
       if @researcher.save
         redirect_to  admin_researchers_path, notice: 'Se ha agregado el investigador'
       else
@@ -44,6 +53,16 @@ module Admin
         :id, :academic_description, :main_language, :main_language_level, 
         :contact_email, :user_id, :image, :first_name, :last_name, :website_link
       )    
+    end
+
+    def user_researcher
+      user = User.find(params[:user_id])
+
+      Researcher.new(
+        first_name: user.first_name,
+        last_name: user.last_name,
+        contact_email: user.email
+      )
     end
   end
 end

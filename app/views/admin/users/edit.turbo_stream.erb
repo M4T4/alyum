@@ -1,0 +1,9 @@
+<%= turbo_stream.replace "remote_modal" do %>
+  <%= render partial: "shared/form_modal", 
+	locals: { 
+		url: admin_user_path(@user),
+		partial: 'admin/users/form_edit',
+		title: 'Editar usuario'
+	} %>
+<% end %>
+

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :bibliographic_files
     resources :users
-    resources :researchers
+    resources :researchers do
+      get 'user_researcher', on: :new
+    end
   end
 end

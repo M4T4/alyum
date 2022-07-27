@@ -1,0 +1,31 @@
+<%= form_with model: @user, url: url do |form| %>
+  <div class="mb-3">
+    <%= form.label "Nombre", class: "form-label" %>
+    <%= form.text_field :first_name, class: "form-control" %>  
+  </div>
+  <div class="mb-3">
+    <%= form.label "Apellido", class: "form-label" %>
+    <%= form.text_field :last_name, class: "form-control" %>  
+  </div>
+	<div class="mb-3">
+    <%= form.label "Correo electronico", class: "form-label" %>
+    <%= form.text_field :email, class: "form-control" %>  
+  </div>
+	<div class="mb-3">
+    <%= form.label "Rol", class: "form-label" %>
+    <%= form.select :role, User.roles.keys.to_a, {}, {:class => "form-select"} %>  
+  </div>
+  <div class="mb-3">
+    <%= form.label "Contraseña", class: "form-label" %>
+    <%= form.password_field :password, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label "Confirmar contraseña", class: "form-label" %>
+    <%= form.password_field :password_confirmation, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Sign up", class: "btn btn-primary" %>
+  </div>
+<% end %>

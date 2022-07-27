@@ -1,6 +1,8 @@
 <p class="h2 pb-3 text-center">Índice de usuarios</p>
+
 <table class="table table-striped">  
 	<tr>
+		<th scope="col">Nombre</th>
 		<th scope="col">Correo</th>
 		<th scope="col">Rol</th>
 		<th scope="col">Fecha de creación</th>
@@ -8,6 +10,7 @@
 	</tr>
 	<% @users.each do |user|  %>
 		<tr>
+			<td><%= full_name(user) %></td>
 			<td><%= user.email %></td>
 			<td><%= user.role %></td>
 			<td><%= user.created_at %></td>
@@ -19,3 +22,7 @@
 		</tr>
 	<% end %>
 </table>
+
+<div class="text-center">
+	<%= link_to "Crear nuevo usuario", new_admin_user_path, "data-controller": "turbo", class: 'btn btn-primary '%>
+</div>

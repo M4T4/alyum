@@ -1,0 +1,9 @@
+<%= turbo_stream.replace "remote_modal" do %>
+  <%= render partial: "shared/form_modal", 
+	locals: { 
+		url: admin_users_path,
+		partial: 'admin/users/form',
+		title: 'Crear nuevo usuario'
+	} %>
+<% end %>
+
