@@ -50,12 +50,14 @@
   <%= link_to image_tag("public/navbar/logo.png", width: 200), root_path, class: "navbar-brand ms-5" %>
   <ul class="navbar-nav  ms-auto  align-items-center">
 
-    <li class="nav-item ms-3 d-none d-lg-block">
-      <form class="d-flex">
-        <input class="form-control me-2 border rounded-pill" type="search">
-        <button class="btn btn-primary" type="submit">Buscar</button>
-      </form>
-    </li>
+    <% unless current_page?(search_engine_path) %>
+      <li class="nav-item ms-3 d-none d-lg-block">
+          <%= search_form_for BibliographicFile.ransack(params[:q]), url: search_engine_path, method: :get, class: "d-flex"  do |form| %>
+            <%= form.text_field :title_or_b_data_cont, class: 'form-control me-2 border rounded-pill' %>
+            <%= form.submit 'Buscar', class: "btn btn-primary"%>
+          <% end %>
+      </li>
+    <% end %>
     
     <li class="nav-item ms-3 d-none d-lg-block">
       <% if current_user %>
