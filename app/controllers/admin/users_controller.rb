@@ -21,7 +21,7 @@ module Admin
         redirect_to  admin_users_path, notice: 'Se ha agregado el usuario'
       else
         render :new, status: :unprocessable_entity
-      end      
+      end
     end
 
     def update
@@ -29,7 +29,7 @@ module Admin
         redirect_to  admin_users_path, notice: 'Se ha actualizado el usuario exitosamente'
       else
         render :edit, status: :unprocessable_entity
-      end 
+      end
     end
 
     private
@@ -40,7 +40,7 @@ module Admin
 
     def user_params
       params.fetch(:user).permit(
-        :id, :role, :password, :password_confirmation, 
+        :id, :role, :password, :password_confirmation,
         :email, :image, :first_name, :last_name, :website_link
       )
     end

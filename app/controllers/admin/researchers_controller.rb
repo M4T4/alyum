@@ -21,11 +21,11 @@ module Admin
     end
 
     def create
-      if params[:researcher].nil?
-        @researcher = user_researcher
-      else
-        @researcher = Researcher.new(researcher_params)
-      end
+      @researcher = if params[:researcher].nil?
+                      new_user_researcher
+                    else
+                      Researcher.new(researcher_params)
+                    end
 
       if @researcher.save
         redirect_to  admin_researchers_path, notice: 'Se ha agregado el investigador'
@@ -41,7 +41,7 @@ module Admin
         render :edit, status: :unprocessable_entity
       end
     end
-    
+
     private
 
     def set_researcher
@@ -50,12 +50,12 @@ module Admin
 
     def researcher_params
       params.fetch(:researcher).permit(
-        :id, :academic_description, :main_language, :main_language_level, 
+        :id, :academic_description, :main_language, :main_language_level,
         :contact_email, :user_id, :image, :first_name, :last_name, :website_link
-      )    
+      )
     end
 
-    def user_researcher
+    def new_user_researcher
       user = User.find(params[:user_id])
 
       Researcher.new(
