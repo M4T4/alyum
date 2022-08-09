@@ -53,6 +53,7 @@ gem 'chartkick'
 gem 'devise'
 gem 'sassc-rails'
 gem 'view_component'
+gem "ahoy_matey"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem 'image_processing', '~> 1.2'

@@ -3,7 +3,7 @@
     <div class="col-8">
       <h1 class="align-items-start display-1">Gráficas</h1>
 			<p class="display-3">
-				Aliquam erat volutpat. Praesent gravida purus. 
+				Visualización en tiempo real de la base bibliográfica de ALYUM.
 			</p>
     </div>
 		<div class="col-1"></div>
@@ -36,6 +36,13 @@
 			</p>
 
 			<%= column_chart BibliographicFile.group(:n1).count %>
+		</div>
+	</div>
+
+
+	<div class="row justify-content-center bg-white">
+		<div class="col-8 fs-4 text-justify p-5">
+			Para más información sobre el método y descripción de las gráficas se puede consultar Sánchez-Fernández, M. A. (2022) “La investigación lingüística de las lenguas yumanas en México (LYUM)”, Expedicionario. Revista de estudios en Antropología, 2(4).
 		</div>
 	</div>
 </div>

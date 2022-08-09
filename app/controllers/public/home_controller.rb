@@ -2,7 +2,9 @@
 
 module Public
   class HomeController < ApplicationController
-    def index; end
+    def index
+      ahoy.track "Home Visit"
+    end
 
     def about_us; end
 
