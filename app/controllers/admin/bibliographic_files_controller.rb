@@ -2,7 +2,8 @@
 
 module Admin
   class BibliographicFilesController < BaseController
-    before_action :set_bibliographic_file, only: %i[show edit update destroy]
+    before_action :set_bibliographic_file, only: %i[show edit update destroy versions]
+    before_action :set_paper_trail_whodunnit, only: %i[create update]
 
     def index
       @q = BibliographicFile.ransack(params[:q])
@@ -17,6 +18,10 @@ module Admin
     end
 
     def edit; end
+
+    def versions
+      @bibliographic_files = @bibliographic_file.versions
+    end
 
     def create
       @bibliographic_file = BibliographicFile.new(bibliographic_file_params)
@@ -45,7 +50,11 @@ module Admin
     private
 
     def set_bibliographic_file
-      @bibliographic_file = BibliographicFile.find(params[:id])
+      @bibliographic_file = if params[:id].nil?
+        BibliographicFile.find(params[:bibliographic_file_id])
+      else
+        BibliographicFile.find(params[:id])
+      end
     end
 
     def bibliographic_file_params

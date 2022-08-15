@@ -6,6 +6,9 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto fs-4">
       <li class="nav-item">
+				<%= link_to "Dashboard", admin_dashboard_path, class: "nav-link text-white #{current? "active",  admin_dashboard_path}" %>
+      </li>
+      <li class="nav-item">
 				<%= link_to "Archivos bibliográficos", admin_bibliographic_files_path, class: "nav-link text-white #{current? "active",  admin_bibliographic_files_path}" %>
       </li>
       <li>

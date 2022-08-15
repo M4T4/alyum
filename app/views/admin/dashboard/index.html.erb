@@ -1,0 +1,88 @@
+<div class="py-3 fs-4">
+	<p class="h2 pb-3 text-center">Cambio recientes</p>
+	
+	<div class="card">
+		<div class="card-body">
+			<table class="table table-borderless">
+				<% @versions.each do |version| %>
+					<tbody>
+						<td>Cambio <%= version.id %></td>
+						<td>Archivo bibliográfico <%= version.item_id %></td>
+						<td>Editado por <%= full_name(User.find(version.whodunnit)) %></td>
+						<td class="text-muted"><%= version.created_at %></td>
+						<td><i class="bi bi-arrow-down-circle-fill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<%= version.id %>" aria-expanded="false" aria-controls="collapseExample"></i></td>
+						<tr>	
+							<td colspan="5">
+								<div class="collapse" id="collapseExample<%= version.id %>">
+									<div class="card card-body fs-5">
+										<p><span class="fw-bold">Cambios realizados:</span><br>
+											<% version.changeset.each do | key, values | %>
+												<%# TODO: Esto es una pesima solucion, revisar si hay otra manera de hacerlo. %>
+												<% next if values[0] == "" && values[1] == nil %>
+												<%= "- #{key}: #{values.join(', ')}" %>
+												<br>
+											<% end %>
+										</p>
+										<table>
+											<thead>
+												<tr>
+													<th scope="col"></th>
+													<th scope="col">Año</th>
+													<th scope="col">Investigador</th>
+													<th scope="col">Género</th>
+													<th scope="col">Ms</th>
+													<th scope="col">Idioma_y</th>
+													<th scope="col">Idioma_y2</th>
+													<th scope="col">Título</th>
+													<th scope="col">Datos B</th>
+													<th scope="col">N1</th>
+													<th scope="col">N2</th>
+													<th scope="col">Idioma</th>
+													<th scope="col">Base</th>
+												</tr>
+											</thead>
+
+												<tbody>
+													<td><i class="bi bi-arrow-up" style="color:green"></i></td>
+													<td><p class=""><%= version.item.year %></p></td>
+													<td><p class=""><%= resercher_full_name(version.item) %></p></td>
+													<td><p class=""><%= version.item.gender %></p></td>
+													<td><p class=""><%= version.item.ms %></p></td>
+													<td><p class=""><%= version.item.language_y %></p></td>
+													<td><p class=""><%= version.item.language_y2 %></p></td>
+													<td><p class=""><%= version.item.title %></p></td>
+													<td><p class=""><%= version.item.b_data %></p></td>
+													<td><p class=""><%= version.item.n1 %></p></td>
+													<td><p class=""><%= version.item.n2 %></p></td>
+													<td><p class=""><%= version.item.document_language %></p></td>
+													<td><p class=""><%= version.item.base %></p></td>
+												</tbody>
+
+												<tbody>
+													<td><i class="bi bi-arrow-down" style="color:red"></i></td>
+													<td><p class=""><%= version.reify.year %></p></td>
+													<td><p class=""><%= resercher_full_name(version.reify) %></p></td>
+													<td><p class=""><%= version.reify.gender %></p></td>
+													<td><p class=""><%= version.reify.ms %></p></td>
+													<td><p class=""><%= version.reify.language_y %></p></td>
+													<td><p class=""><%= version.reify.language_y2 %></p></td>
+													<td><p class=""><%= version.reify.title %></p></td>
+													<td><p class=""><%= version.reify.b_data %></p></td>
+													<td><p class=""><%= version.reify.n1 %></p></td>
+													<td><p class=""><%= version.reify.n2 %></p></td>
+													<td><p class=""><%= version.reify.document_language %></p></td>
+													<td><p class=""><%= version.reify.base %></p></td>
+												</tbody>
+											</table>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>
+
+	

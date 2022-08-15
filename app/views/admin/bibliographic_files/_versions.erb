@@ -1,0 +1,82 @@
+<div class="py-3 fs-4">
+		<table class="table table-borderless">
+			<% @bibliographic_files.each.with_index(1) do |file, index| %>
+				<tbody>
+					<td>Versión <%= index %></td>
+					<td>Editado por <%= full_name(User.find(file.whodunnit)) %></td>
+					<td class="text-muted"><%= file.created_at %></td>
+					<td><i class="bi bi-arrow-down-circle-fill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<%= file.id %>" aria-expanded="false" aria-controls="collapseExample"></i></td>
+					<tr>	
+						<td colspan="4">
+							<div class="collapse" id="collapseExample<%= file.id %>">
+								<div class="card card-body fs-6">
+									<p><span class="fw-bold">Cambios realizados:</span><br>
+										<% file.changeset.each do | key, values | %>
+											<%# TODO: Esto es una pesima solucion, revisar si hay otra manera de hacerlo. %>
+											<% next if values[0] == "" && values[1] == nil %>
+											<%= "- #{key}: #{values.join(', ')}" %>
+											<br>
+										<% end %>
+									</p>
+									<table>
+										<thead>
+											<tr>
+												<th scope="col">Año</th>
+												<th scope="col">Investigador</th>
+												<th scope="col">Género</th>
+												<th scope="col">Ms</th>
+												<th scope="col">Idioma_y</th>
+												<th scope="col">Idioma_y2</th>
+												<th scope="col">Título</th>
+												<th scope="col">Datos B</th>
+												<th scope="col">N1</th>
+												<th scope="col">N2</th>
+												<th scope="col">Idioma</th>
+												<th scope="col">Base</th>
+											</tr>
+										</thead>
+
+										<tbody>
+											<td><i class="bi bi-arrow-up" style="color:green"></i></td>
+											<td><p class=""><%= file.item.year %></p></td>
+											<td><p class=""><%= resercher_full_name(file.item) %></p></td>
+											<td><p class=""><%= file.item.gender %></p></td>
+											<td><p class=""><%= file.item.ms %></p></td>
+											<td><p class=""><%= file.item.language_y %></p></td>
+											<td><p class=""><%= file.item.language_y2 %></p></td>
+											<td><p class=""><%= file.item.title %></p></td>
+											<td><p class=""><%= file.item.b_data %></p></td>
+											<td><p class=""><%= file.item.n1 %></p></td>
+											<td><p class=""><%= file.item.n2 %></p></td>
+											<td><p class=""><%= file.item.document_language %></p></td>
+											<td><p class=""><%= file.item.base %></p></td>
+										</tbody>
+
+										<tbody>
+											<td><i class="bi bi-arrow-down" style="color:red"></i></td>
+											<td><p class=""><%= file.reify.year %></p></td>
+											<td><p class=""><%= resercher_full_name(file.reify) %></p></td>
+											<td><p class=""><%= file.reify.gender %></p></td>
+											<td><p class=""><%= file.reify.ms %></p></td>
+											<td><p class=""><%= file.reify.language_y %></p></td>
+											<td><p class=""><%= file.reify.language_y2 %></p></td>
+											<td><p class=""><%= file.reify.title %></p></td>
+											<td><p class=""><%= file.reify.b_data %></p></td>
+											<td><p class=""><%= file.reify.n1 %></p></td>
+											<td><p class=""><%= file.reify.n2 %></p></td>
+											<td><p class=""><%= file.reify.document_language %></p></td>
+											<td><p class=""><%= file.reify.base %></p></td>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			<% end %>
+		</table>
+
+	<br>
+</div>
+
+	

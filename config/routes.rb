@@ -16,7 +16,10 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :bibliographic_files
+    get "dashboard", to: 'dashboard#index'
+    resources :bibliographic_files do
+      get "versions", to: "bibliographic_files#versions"
+    end
     resources :users
     resources :researchers do
       get 'user_researcher', on: :new

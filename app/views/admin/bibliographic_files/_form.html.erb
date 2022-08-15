@@ -15,7 +15,7 @@
     <div class="row g-3 mb-3">
       <div class="col-6">
         <%= form.label "Tipo de documento" %>
-        <%= form.select :document_type, document_types, {}, {:class => "form-select"} %>
+        <%= form.select :document_type, document_types, {include_blank: true}, {:class => "form-select"} %>
       </div>
       <div class="col-6">
         <%= form.label "Lenguaje del documento" %>
@@ -148,3 +148,9 @@
     </div>
   <% end %>
 </div>
+
+
+
+  
+
+

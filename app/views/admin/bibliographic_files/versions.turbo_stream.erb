@@ -2,7 +2,8 @@
   <%= render partial: "shared/form_modal", 
   locals: { 
     url: admin_bibliographic_file_path(@bibliographic_file),
-    partial: 'admin/bibliographic_files/form',
-    title: "Editar archivo #{@bibliographic_file.id}"
+    partial: 'admin/bibliographic_files/versions',
+    title: "Versiones de Archivo bibliográfico #{@bibliographic_file.id}",
+		size: 'modal-xl'
   } %>
 <% end %>

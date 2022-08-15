@@ -40,7 +40,8 @@ module BibliographicHelper
       'Pragmática',
       'Pragmática discursiva',
       'Semantica',
-      'Sintaxis'
+      'Sintaxis',
+      'n'
     ]
   end
 
