@@ -2,6 +2,7 @@
 
 <div id="<%= dom_id bibliographic_file %>">
   <tr>
+    <td><i class="bi bi-<%= bibliographic_file.free_lock == true ? 'unlock' : 'lock' %>-fill"></i></td>
     <td><%= bibliographic_file.id %></td>
     <td><%= bibliographic_file.year %></td>
     <td><%= resercher_full_name(bibliographic_file) %></td>

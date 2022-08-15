@@ -20,10 +20,10 @@
     </ul>
     <hr>
     <div class="dropdown pb-3">
-      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle fs-3" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
         <%= current_user.email %>
       </a>
-      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow fs-3" aria-labelledby="dropdownUser1">
         <%= link_to "Regresar a vistas públicas", root_path, class: "fa fa-cog dropdown-item" %>
         <%= link_to "Salir", destroy_user_session_path, 'data-turbo-method': :get, class: "fa fa-sign-out-alt dropdown-item" %>
       </ul>
