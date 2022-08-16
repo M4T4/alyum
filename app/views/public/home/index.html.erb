@@ -21,37 +21,40 @@
   </button>
 </div>
 
-<div class="p-0">
+<div class="py-3 text-center">
+	<%# Porque rayos hay un puto delay aqui???? %>
+	<button type="button" class="btn btn-default btn-circle btn-xl mx-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+		<p class="text-white">Buscador bibliográfico</p>
+	</button>
+	<button type="button" class="btn btn-default btn-circle btn-xl mx-5"><p class="text-white">Buscador léxico</p></button>
+</div>
 
-
-
-	<div class="row text-center py-5">
-		<div class="col">
-			<%= link_to image_tag("public/drawings/cucapa.svg"), search_engine_path(q: {language_y_in: 'Cocopa'}), class: "fa fa-plus-square" %>
-		</div>
-		<div class="col">
-			<%= link_to image_tag("public/drawings/paipai.svg"), search_engine_path(q: {language_y_in: 'Pa ipai'}), class: "fa fa-plus-square" %>
-		</div>
-		<div class="col">
-			<%= link_to image_tag("public/drawings/kiliwa.svg"), search_engine_path(q: {language_y_in: 'Kiliwa'}), class: "fa fa-plus-square" %>
-		</div>
-		<div class="col">
-			<%= link_to image_tag("public/drawings/cochimi.svg"), search_engine_path(q: {language_y_in: 'Cochimi'}), class: "fa fa-plus-square" %>
-		</div>
-		<div class="col">
-			<%= link_to image_tag("public/drawings/koahl.svg"), search_engine_path(q: {language_y_in: 'Cocopa'}), class: "fa fa-plus-square" %>
-		</div>
-		<div class="col">
-			<%= link_to image_tag("public/drawings/kumiai.svg"), search_engine_path(q: {language_y_in: 'Kumeyaay'}), class: "fa fa-plus-square" %>
-		</div>
+<div class="row text-center py-5 collapse" id="collapseExample">
+	<div class="col">
+		<%= link_to image_tag("public/drawings/cucapa.svg"), search_engine_path(q: {language_y_in: 'Cocopa'}), class: "fa fa-plus-square" %>
 	</div>
+	<div class="col">
+		<%= link_to image_tag("public/drawings/paipai.svg"), search_engine_path(q: {language_y_in: 'Pa ipai'}), class: "fa fa-plus-square" %>
+	</div>
+	<div class="col">
+		<%= link_to image_tag("public/drawings/kiliwa.svg"), search_engine_path(q: {language_y_in: 'Kiliwa'}), class: "fa fa-plus-square" %>
+	</div>
+	<div class="col">
+		<%= link_to image_tag("public/drawings/cochimi.svg"), search_engine_path(q: {language_y_in: 'Cochimi'}), class: "fa fa-plus-square" %>
+	</div>
+	<div class="col">
+		<%= link_to image_tag("public/drawings/koahl.svg"), search_engine_path(q: {language_y_in: 'Cocopa'}), class: "fa fa-plus-square" %>
+	</div>
+	<div class="col">
+		<%= link_to image_tag("public/drawings/kumiai.svg"), search_engine_path(q: {language_y_in: 'Kumeyaay'}), class: "fa fa-plus-square" %>
+	</div>
+</div>
 
-  <div class="row bg-white justify-content-center text-center py-5">
-    <p class="fs-4">
-			Este proyecto tiene como objetivo reunir y organizar en un solo espacio las distintas investigaciones relacionadas con las lenguas yumanas, con énfasis en aquellas que se hablan en México, para hacerla universalmente accesible y útil. 
-			<br>ALYUM tiene dos ejes principales: el buscador bibliográfico, especializado en investigación lingüística de todas las lenguas yumanas; y el buscador léxico o BULE, que cuenta con unidades léxicas capturadas de distintos trabajos.
-			<br>ALYUM también contempla otras iniciativas que pueden ser consultadas en la pestaña de Proyectos de la página. 
-		</p>
-		<%= link_to "Ir Busqueda avanzada", search_engine_path, class: "btn btn-primary btn-lg w-auto" %>
-  </div>
+<div class="row bg-white justify-content-center text-center py-5">
+	<p class="fs-4">
+		Este proyecto tiene como objetivo reunir y organizar en un solo espacio las distintas investigaciones relacionadas con las lenguas yumanas, con énfasis en aquellas que se hablan en México, para hacerla universalmente accesible y útil. 
+		<br>ALYUM tiene dos ejes principales: el buscador bibliográfico, especializado en investigación lingüística de todas las lenguas yumanas; y el buscador léxico o BULE, que cuenta con unidades léxicas capturadas de distintos trabajos.
+		<br>ALYUM también contempla otras iniciativas que pueden ser consultadas en la pestaña de Proyectos de la página. 
+	</p>
+	<%= link_to "Ir Busqueda avanzada", search_engine_path, class: "btn btn-primary btn-lg w-auto" %>
 </div>
