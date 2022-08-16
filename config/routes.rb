@@ -17,13 +17,14 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get "dashboard", to: 'dashboard#index'
+    resources :carousel
+    resources :users
+    resources :projects
     resources :bibliographic_files do
       get "versions", to: "bibliographic_files#versions"
     end
-    resources :users
     resources :researchers do
       get 'user_researcher', on: :new
     end
-    resources :carousel
   end
 end

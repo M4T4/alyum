@@ -15,7 +15,9 @@ module Public
       @researchers = Researcher.all
     end
 
-    def projects; end
+    def projects
+      @projects = Project.all
+    end
 
     def graphs; end
   end

@@ -1,0 +1,8 @@
+<%= turbo_stream.replace "remote_modal" do %>
+  <%= render partial: "shared/form_modal", 
+	locals: { 
+		url: admin_projects_path,
+		partial: 'admin/projects/form',
+		title: 'Crear nuevo proyecto'
+	} %>
+<% end %>

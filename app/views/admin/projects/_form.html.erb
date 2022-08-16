@@ -1,0 +1,21 @@
+<%= form_with model: @project, url: url do |form| %>
+  <div class="mb-3">
+    <%= form.label "Título", class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>  
+  </div>
+
+
+  <div class="mb-3">
+    <%= form.label "Descripción", class: "form-label" %>
+    <%= form.text_area :body, class: "form-control", rows: "6"%>
+  </div>
+  <div class="mb-3">
+    <%= form.label "Foto de proyecto", class: "form-label" %>
+    <%= form.file_field :image, direct_upload: true, class: "form-control" %>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+    <%= form.submit "Agregar proyecto", class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -3,9 +3,10 @@
 class ProjectCardComponent < ViewComponent::Base
   include ApplicationHelper
 
-  def initialize(title:, image_url:)
+  def initialize(title:, body:, image_url:)
     @title = title
     @image = image_url
+    @body = body
   end
 
   def alt_description

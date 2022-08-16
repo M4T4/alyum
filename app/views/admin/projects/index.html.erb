@@ -1,0 +1,23 @@
+<p class="h2 pb-3 text-center">Índice de proyectos</p>
+
+<table class="table table-striped fs-4">  
+	<tr>
+		<th scope="col">Título</th>
+		<th></th>
+	</tr>
+	<% @projects.each do |project|  %>
+		<tr>
+			<td><%= link_to project.title, admin_project_path(project), "data-controller": "turbo" %></td>
+			<td>
+				<%= link_to edit_admin_project_path(project), "data-controller": "turbo" do %>
+					<i class="bi bi-files" style="color:black"></i>
+				<% end %>
+      </td>
+		</tr>
+	<% end %>
+</table>
+
+<div class="text-center">
+	<%= link_to "Crear nuevo proyecto", new_admin_project_path, "data-controller": "turbo", class: 'btn btn-primary mx-2 fs-4'%>
+</div>
+
