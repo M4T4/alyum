@@ -1,0 +1,27 @@
+<p class="h2 pb-3 text-center">Índice de investigadores</p>
+
+<table class="table table-striped fs-4">  
+	<tr class="text-center">
+		<th scope="col">Imagen</th>
+		<th scope="col">Posición</th>
+		<th scope="col">Visible</th>
+		<th scope="col"></th>
+
+	</tr>
+	<% @carousel_elements.each do |element|  %>
+		<tr class="align-middle text-center">
+			<td><%= image_tag(element.image, width: 120) %></td>
+			<td><%= element.position %></td>
+			<td><%= element.visible %></td>
+			<td>
+        <%= link_to edit_admin_carousel_path(element), "data-controller": "turbo" do %>
+          <i class="bi bi-files" style="color:black"></i>
+        <% end %>
+      </td>1
+		</tr>
+	<% end %>
+</table>
+
+<div class="text-center">
+	<%= link_to "Crear nuevo elemento", new_admin_carousel_path, "data-controller": "turbo", class: 'btn btn-primary mx-2 fs-4'%>
+</div>

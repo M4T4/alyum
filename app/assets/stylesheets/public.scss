@@ -76,4 +76,18 @@
     .bg-primary {
         background-color: #f68920 !important;
     }
+
+    .carousel-inner {
+        max-height: 400px;
+        img {
+          max-height: 400px;
+          width: auto;
+          min-height: 400px;
+          margin: auto;
+        }
+      }
+      
+    .carousel-indicators img {
+    max-width: 100px;
+    }
 }

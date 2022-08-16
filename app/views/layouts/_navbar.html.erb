@@ -25,9 +25,9 @@
       <li class="nav-item mx-4">
         <%= link_to "Ir Busqueda avanzada", search_engine_path, class: "nav-link" %>
       </li>
-      <li class="nav-item d-lg-none">
+      <li class="nav-item mx-4">
         <% if current_user %>
-          <li class="nav-item dropdown d-lg-none">
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <div class="fa fa-user"></div>
               <b><%= current_user.email %></b>
@@ -44,37 +44,4 @@
       </li>
     </ul>
   </div>
-</nav>
-
-<nav class="navbar navbar-expand-lg navbar-light lined <%= current_page?(search_engine_path) ? 'bg-primary' : 'bg-white' %>">
-  <%= link_to image_tag("public/navbar/logo.png", width: 200), root_path, class: "navbar-brand ms-5" %>
-  <ul class="navbar-nav  ms-auto  align-items-center">
-
-    <% unless current_page?(search_engine_path) %>
-      <li class="nav-item ms-3 d-none d-lg-block">
-          <%= search_form_for BibliographicFile.ransack(params[:q]), url: search_engine_path, method: :get, class: "d-flex"  do |form| %>
-            <%= form.text_field :title_or_b_data_cont, class: 'form-control me-2 border rounded-pill' %>
-            <%= form.submit 'Buscar', class: "btn btn-primary"%>
-          <% end %>
-      </li>
-    <% end %>
-    
-    <li class="nav-item ms-3 d-none d-lg-block">
-      <% if current_user %>
-        <li class="nav-item dropdown d-none d-lg-block">
-          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <div class="fa fa-user"></div>
-            <b><%= current_user.email %></b>
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "Editar cuenta", edit_user_registration_path, class: "fa fa-cog dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" %>
-            <%= link_to "Administrador", admin_bibliographic_files_path, class: "fa fa-cog dropdown-item" %>
-            <%= link_to "Salir", destroy_user_session_path, 'data-turbo-method': :get, class: "fa fa-sign-out-alt dropdown-item" %>
-          </ul>
-        </li>
-      <% else %>
-        <%= link_to "Iniciar sesión", new_user_session_path, class: "me-5 text-decoration-none text-dark #{'active fw-bold' if current_page?(new_user_session_path)} " %>
-      <% end %>
-    </li>
-  </ul>
 </nav>

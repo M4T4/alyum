@@ -4,6 +4,7 @@ module Public
   class HomeController < ApplicationController
     def index
       ahoy.track "Home Visit"
+      @carousel_elements = Carousel.visible
     end
 
     def about_us; end

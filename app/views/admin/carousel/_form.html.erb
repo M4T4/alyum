@@ -1,0 +1,22 @@
+<%= form_with model: @carousel_element, url: url do |form| %>
+  <div class="mb-3">
+    <%= form.label "Posición", class: "form-label" %>
+    <%= form.number_field :position, class: "form-control" %>  
+  </div>
+  <div class="mb-3">
+    <%= form.label "Visible", class: "form-label" %>
+    <%= form.check_box :visible, class: "form-check-input" %>  
+  </div>
+  <div class="mb-3">
+    <%= form.label "Imagen", class: "form-label" %>
+    <%= form.file_field :image, direct_upload: true, class: "form-control" %>
+  </div>
+
+	<p class="fs-5 text-danger">La imagen debe tener un 3:2 aspect ratio (eg. 2592x1728)</p>
+  
+	<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+    <%= form.submit "Guardar", class: "btn btn-primary" %>
+  </div>
+
+<% end %>

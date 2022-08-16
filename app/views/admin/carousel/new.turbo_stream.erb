@@ -1,0 +1,9 @@
+<%= turbo_stream.replace "remote_modal" do %>
+  <%= render partial: "shared/form_modal", 
+	locals: { 
+		url: admin_carousel_index_path,
+		partial: 'admin/carousel/form',
+		title: 'Crear nuevo elemento',
+		size: 'modal-sm'
+	} %>
+<% end %>

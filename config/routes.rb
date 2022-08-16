@@ -24,5 +24,6 @@ Rails.application.routes.draw do
     resources :researchers do
       get 'user_researcher', on: :new
     end
+    resources :carousel
   end
 end
