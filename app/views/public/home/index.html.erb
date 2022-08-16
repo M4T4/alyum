@@ -5,11 +5,18 @@
     <% end %>
   </div>
     <div class="carousel-inner bg-white">
-  <% @carousel_elements.each_with_index do |element, index| %>
-      <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
-        <%= image_tag(element.image, class: "d-block") %>
-      </div>
-  <% end %>
+	<% if @carousel_elements.empty? %>
+		<div class="carousel-item active">
+			<%= image_tag("logo_alt.svg", class: "d-block") %>
+		</div>
+	<% else %>
+		<% @carousel_elements.each_with_index do |element, index| %>
+				<div class="carousel-item <%= index == 0 ? 'active' : '' %>">
+					<%= image_tag(element.image, class: "d-block") %>
+				</div>
+		<% end %>
+	<% end %>
+	
     </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
