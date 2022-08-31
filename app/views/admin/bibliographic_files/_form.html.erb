@@ -47,18 +47,15 @@
       </div>
     </div>
     <div class="row g-3 mb-3">
-      <div class="col-6">
+      <div class="col-8">
         <%= form.label "Titulo" %>
         <%= form.text_field :title, class: "form-control" %>
       </div>
-      <div class="col-3">
+      <div class="col-4">
         <%= form.label "Año" %>
         <%= form.number_field :year, class: "form-control" %>
       </div>
-      <div class="col-3">
-        <%= form.label "MS" %>
-        <%= form.text_field :ms, class: "form-control" %>
-      </div>
+
     </div>
     <br />
     <hr />
@@ -106,9 +103,25 @@
         <%= form.text_field :doi, class: "form-control" %>
       </div>
     </div>
+    <div class="row g-3 mb-3">
+      <div class="col-4">
+        <%= form.label "Numero de pagina" %>
+        <%= form.number_field :page_number, class: "form-control"  %>
+      </div>
+    </div>
     <br />
     <hr />
     <br />
+    <div class="row g-3 mb-3">
+      <div class="col fs-5 text-center">
+        <%= form.label "¿Candado libre?" %>
+        <%= form.check_box :free_lock, class: "form-check-input" %>
+      </div>
+      <div class="col fs-5 text-center">
+        <%= form.label "MS" %>
+        <%= form.check_box :ms, class: "form-check-input" %>
+      </div>
+    </div>
     <div class="row g-3 mb-3">
       <div class="col-4">
         <%= form.label "Pais" %>
@@ -124,23 +137,13 @@
       </div>
     </div>
     <div class="row g-3 mb-3">
-      <div class="col-4">
+      <div class="col-6">
         <%= form.label "N1" %>
         <%= form.select :n1, n1s, {include_blank: true}, {:class => "form-select"}  %>
       </div>
-      <div class="col-4">
+      <div class="col-6">
         <%= form.label "N2" %>
         <%= form.select :n2, n1s, {include_blank: true}, {:class => "form-select"}  %>
-      </div>
-      <div class="col-4">
-        <%= form.label "Numero de pagina" %>
-        <%= form.number_field :page_number, class: "form-control"  %>
-      </div>
-    </div>
-    <div>
-      <div class="col fs-5 text-center">
-        <%= form.label "¿Candado libre?" %>
-        <%= form.check_box :free_lock, class: "form-check-input" %>
       </div>
     </div>
     

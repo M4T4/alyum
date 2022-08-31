@@ -7,10 +7,15 @@
     <td><%= bibliographic_file.year %></td>
     <td><%= resercher_full_name(bibliographic_file) %></td>
     <td><%= bibliographic_file.gender %></td>
-    <td><%= bibliographic_file.ms %></td>
     <td><%= bibliographic_file.language_y %></td>
     <td><%= bibliographic_file.language_y %></td>
-    <td><%= bibliographic_file.title %></td>
+    <% if bibliographic_file.ms && bibliographic_file.acces_link %>
+      <td><%= link_to bibliographic_file.title, bibliographic_file.acces_link %></td>
+    <% else %>
+      <td><%= bibliographic_file.title %></td>
+    <% end %>
+    
+
     <td><%= bibliographic_file.b_data %></td>
     <td><%= bibliographic_file.n1.try(:capitalize) %></td>
     <td><%= bibliographic_file.n2.try(:capitalize) %></td>

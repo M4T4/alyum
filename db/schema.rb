@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_16_020412) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_31_203833) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -91,7 +91,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_16_020412) do
     t.string "researcher_last_name"
     t.string "gender"
     t.integer "year"
-    t.string "ms"
     t.string "title"
     t.string "journal_bookname"
     t.string "editor_record"
@@ -114,6 +113,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_16_020412) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "b_data"
+    t.boolean "ms"
   end
 
   create_table "carousels", force: :cascade do |t|
