@@ -1,7 +1,7 @@
 <div class="p-0">
   <div class="row">
     <div class="col-8">
-      <h1 class="align-items-start display-1">Investigadores Vigentes <br>relacionados con alguna lengua yumana.</h1>
+      <h1 class="align-items-start display-1">Investigadores Vigentes</h1>
     </div>
 		<div class="col-1"></div>
     <div class="col my-auto pb-3">
@@ -16,6 +16,10 @@
 	</div>
 
 	<div class="row p-5" style="background: white">
+		<p class="display-4 text-center" style="padding-right: 40px; padding-left: 40px;">
+			Relacionados con alguna lengua yumana.
+		</p>
+
 		<% @researchers.each do |researcher| %>
 			<%= render(CardComponent.new(
 				name: full_name(researcher), 
