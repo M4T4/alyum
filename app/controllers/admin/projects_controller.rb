@@ -20,7 +20,7 @@ module Admin
       @project = Project.new(project_params)
 
       if @project.save
-        redirect_to  admin_projects_path, notice: 'Se ha agregado el investigador'
+        redirect_to  admin_projects_path, notice: 'Se ha agregado el proyecto'
       else
         render :new, status: :unprocessable_entity
       end
@@ -28,7 +28,7 @@ module Admin
 
     def update
       if @project.update(project_params)
-        redirect_to  admin_projects_path, notice: 'Se ha actualizado el investigador exitosamente'
+        redirect_to  admin_projects_path, notice: 'Se ha actualizado el proyecto exitosamente'
       else
         render :edit, status: :unprocessable_entity
       end
