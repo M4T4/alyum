@@ -29,37 +29,8 @@
 </div>
 
 <div class="py-3 text-center">
-	<%= link_to image_tag("public/drawings/buscador_lexico.svg", width: 150), search_engine_path, :class => "fa fa-plus-square mx-5 pt-5", "data-bs-target" => "#offcanvasBottom", "data-bs-toggle" => "offcanvas"  %>
+	<%= link_to image_tag("public/drawings/buscador_lexico.svg", width: 115), "https://ihcc.edu.mx/bule/", :class => "fa fa-plus-square mx-5 pt-5"  %>
 	<%= link_to image_tag("public/drawings/buscador_bibliografico.svg", width: 150), search_engine_path, class: "fa fa-plus-square mx-5 pt-5" %>
-
-
-	<div class="offcanvas offcanvas-bottom h-auto" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
-		<div class="offcanvas-header">
-			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-		</div>
-		<div class="offcanvas-body">
-			<div class="row text-center py-5">
-				<div class="col">
-					<%= link_to image_tag("public/drawings/cucapa.svg"), search_engine_path(q: {language_y_in: 'Cocopa'}), class: "fa fa-plus-square" %>
-				</div>
-				<div class="col">
-					<%= link_to image_tag("public/drawings/paipai.svg"), search_engine_path(q: {language_y_in: 'Pa ipai'}), class: "fa fa-plus-square" %>
-				</div>
-				<div class="col">
-					<%= link_to image_tag("public/drawings/kiliwa.svg"), search_engine_path(q: {language_y_in: 'Kiliwa'}), class: "fa fa-plus-square" %>
-				</div>
-				<div class="col">
-					<%= link_to image_tag("public/drawings/cochimi.svg"), search_engine_path(q: {language_y_in: 'Cochimi'}), class: "fa fa-plus-square" %>
-				</div>
-				<div class="col">
-					<%= link_to image_tag("public/drawings/koahl.svg"), search_engine_path(q: {language_y_in: 'Cocopa'}), class: "fa fa-plus-square" %>
-				</div>
-				<div class="col">
-					<%= link_to image_tag("public/drawings/kumiai.svg"), search_engine_path(q: {language_y_in: 'Kumeyaay'}), class: "fa fa-plus-square" %>
-				</div>
-			</div>
-		</div>
-	</div>
 </div>
 
 
@@ -70,4 +41,25 @@
 		<br>ALYUM tiene dos ejes principales: el buscador bibliográfico, especializado en investigación lingüística de todas las lenguas yumanas; y el buscador léxico o BULE, que cuenta con unidades léxicas capturadas de distintos trabajos.
 		<br>ALYUM también contempla otras iniciativas que pueden ser consultadas en la pestaña de Proyectos de la página. 
 	</p>
+</div>
+
+<div class="row text-center py-5">
+	<div class="col">
+		<%= link_to image_tag("public/drawings/cucapa.svg"), search_engine_path(q: {language_y_in: 'Cocopa'}), class: "fa fa-plus-square" %>
+	</div>
+	<div class="col">
+		<%= link_to image_tag("public/drawings/paipai.svg"), search_engine_path(q: {language_y_in: 'Pa ipai'}), class: "fa fa-plus-square" %>
+	</div>
+	<div class="col">
+		<%= link_to image_tag("public/drawings/kiliwa.svg"), search_engine_path(q: {language_y_in: 'Kiliwa'}), class: "fa fa-plus-square" %>
+	</div>
+	<div class="col">
+		<%= link_to image_tag("public/drawings/cochimi.svg"), search_engine_path(q: {language_y_in: 'Cochimi'}), class: "fa fa-plus-square" %>
+	</div>
+	<div class="col">
+		<%= link_to image_tag("public/drawings/koahl.svg"), search_engine_path(q: {language_y_in: 'Cocopa'}), class: "fa fa-plus-square" %>
+	</div>
+	<div class="col">
+		<%= link_to image_tag("public/drawings/kumiai.svg"), search_engine_path(q: {language_y_in: 'Kumeyaay'}), class: "fa fa-plus-square" %>
+	</div>
 </div>
