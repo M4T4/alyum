@@ -33,19 +33,19 @@
 			<p class="display-4 text-center" style="padding-right: 40px; padding-left: 40px;">
 				Distribución de los trabajos de investigación yumana
 			</p>
-			<%= column_chart BibliographicFile.order('year ASC').group(:year).count, colors: ["#b00"] %>
+			<%= column_chart @years, colors: ["#b00"] %>
 
 			<p class="display-4 text-center mt-5" style="padding-right: 40px; padding-left: 40px;">
 				Cantidad de trabajos lingüísticos de las lenguas yumanas
 			</p>
 
-			<%= column_chart BibliographicFile.group(:language_y).count, colors: ["#666"] %>
+			<%= column_chart @language_y, colors: ["#666"] %>
 
 			<p class="display-4 text-center mt-5" style="padding-right: 40px; padding-left: 40px;">
 				Cantidad de trabajos por nivel de lengua
 			</p>
 
-			<%= column_chart BibliographicFile.group(:n1).count %>
+			<%= column_chart @n1 %>
 		</div>
 	</div>
 
