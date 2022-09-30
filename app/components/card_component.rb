@@ -5,7 +5,7 @@ class CardComponent < ViewComponent::Base
 
   def initialize(name:, image_url:, description:, language:, level:, email:, website_link:)
     @name = name
-    @image_url = image_url.present? ? image_url : 'public/about_us/volcan.jpg'
+    @image_url = image_url.present? ? image_url.key : 'public/about_us/volcan.jpg'
     @description = description
     @language = language
     @level = level

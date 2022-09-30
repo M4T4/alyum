@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: djtfjnhyv
+  api_key: '842595434325726'
+  api_secret: k55RZS-QBTtYgaOSNyGXMDp563E
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: djtfjnhyv
+  api_key: '842595434325726'
+  api_secret: k55RZS-QBTtYgaOSNyGXMDp563E
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: djtfjnhyv
+  api_key: '842595434325726'
+  api_secret: k55RZS-QBTtYgaOSNyGXMDp563E
+  enhance_image_tag: true
+  static_file_support: false

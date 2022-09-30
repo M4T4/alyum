@@ -10,7 +10,7 @@
 	</tr>
 	<% @carousel_elements.each do |element|  %>
 		<tr class="align-middle text-center">
-			<td><%= image_tag(element.image, width: 120) %></td>
+			<td><%= cl_image_tag(element.image.key, width: 120) %></td>
 			<td><%= element.position %></td>
 			<td><%= element.visible %></td>
 			<td>

@@ -56,6 +56,7 @@ gem 'view_component'
 gem "ahoy_matey"
 gem 'paper_trail'
 gem "nilify_blanks"
+gem "cloudinary"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem 'image_processing', '~> 1.2'
