@@ -1,41 +1,49 @@
-<div class="text-center">
-  <h2>Editar usuario</h2>
+<main class="form-signin pb-5">
+  <h1 class="align-items-start display-1">Editar cuenta</h1>
+  <div class="container">
+    <div id="login-row" class="row justify-content-center align-items-center">
+      <div id="login-column" class="col-md-5">
+        <div id="login-box" class="col-md-12">
+          <div id="login-form" class="form" action="" method="post">
+          
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }, html: { method: :put }) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }, html: { method: :put }) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+              <div class="field">
+                <%= f.label "Correo" %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control rounded btn btn-lg rounded-pill", style:"border-color: #D9D9D9; background-color: white" %>
+              </div>
 
-    <div class="field">
-      <%= f.label "Correo" %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "mb-3" %>
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+
+              <div class="field">
+                <%= f.label "Contraseña" %><br />
+                <%= f.password_field :password, autocomplete: "new-password", class: "form-control btn btn-lg rounded-pill", style:"border-color: #D9D9D9; background-color: white" %>
+                <% if @minimum_password_length %>
+                  <br />
+                  <em><%= @minimum_password_length %> caracteres mínimos</em>
+                <% end %>
+              </div>
+
+              <div class="field">
+                <%= f.label "Confirmar contraseña", class: "mt-3" %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control btn btn-lg rounded-pill", style:"border-color: #D9D9D9; background-color: white" %>
+              </div>
+
+              <div class="field">
+                <%= f.label "Contraseña actual" %><br />
+                <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control btn btn-lg rounded-pill", style:"border-color: #D9D9D9; background-color: white" %>
+              </div>
+
+              <div class="actions pt-3">
+                <%= f.submit "Actualizar", class: "form-control btn-lg btn-primary rounded-pill", style:"background-color: black; border-color: black" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label "Contraseña" %><br />
-      <%= f.password_field :password, autocomplete: "new-password"  %>
-      <% if @minimum_password_length %>
-        <br />
-        <em><%= @minimum_password_length %> caracteres mínimos</em>
-      <% end %>
-    </div>
-
-    <div class="field">
-      <%= f.label "Confirmar contraseña", class: "mt-3" %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "mb-3"  %>
-    </div>
-
-    <div class="field">
-      <%= f.label "Contraseña actual" %><br />
-      <%= f.password_field :current_password, autocomplete: "current-password", class: "mb-3" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Actualizar" %>
-    </div>
-  <% end %>
-
-  <%= link_to "Regresar", :back %>
-</div>
+  </div>
+</main>
