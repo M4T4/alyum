@@ -5,7 +5,10 @@
 	<%= image_tag("public/footer/footer_logo.png", width: 180, class: "pt-3") %>
 	<p class="pt-3 fw-bold">¿Cómo citar ALYUM?</p>
 	<p>Sánchez-Fernández, Manuel Alejandro. (2022). Archivo de lenguas yumanas. México: Instituto de Humanidades y Ciencias de la Conducta</p>
-	<p>Derechos reservados. El Colegio México 2022​</p>
+	<p>Derechos reservados. IHCC Publicaciones.​</p>
 	<p><span class="fw-bold"><%= Ahoy::Event.where(name: "Home Visit").distinct.pluck(:visit_id).count %><span> visitas</p>
+	<div class="py-4">
+		<%= image_tag("public/ihcc.png", width: 140) %>
+	</div>
 	<%= image_tag("public/cc.png", width: 120) %>
 </footer>
