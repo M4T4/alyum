@@ -2,7 +2,7 @@
 
 require 'csv'
 
-namespace :transactions do
+namespace :custom_task do
   desc 'Populate database'
   task populate_database: :environment do
     csv_text = File.read(Rails.root.join('lib', 'seeds', 'tabla_bibliografica_2021.csv'))
