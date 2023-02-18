@@ -9,10 +9,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-User.find_or_create_by(email: 'matt@alyum.com',
-                       password: '121212',
-                       password_confirmation: '121212')
+# User.find_or_create_by(email: 'matt@alyum.com',
+#                        password: '121212',
+#                        password_confirmation: '121212')
 
-User.find_or_create_by(email: 'msanchez12@uabc.edu.mx',
-                       password: 'password',
-                       password_confirmation: 'password')
+# User.find_or_create_by(email: 'msanchez12@uabc.edu.mx',
+#                        password: 'password',
+#                        password_confirmation: 'password')
