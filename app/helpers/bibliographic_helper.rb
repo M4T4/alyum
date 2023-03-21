@@ -32,16 +32,16 @@ module BibliographicHelper
 
   def n1s
     [
-      'Descripción',
-      'Documentación',
-      'Fonología',
-      'Lexicosemántico',
-      'Morfología',
-      'Pragmática',
-      'Pragmática discursiva',
-      'Semantica',
-      'Sintaxis',
-      'n'
+      ['Descripción', 'Descripción'],
+      ['Documentación', 'Documentación'],
+      ['Fonología', 'Fonología'],
+      ['Lexicosemántico', 'Lexicosemántico'],
+      ['Morfología', 'Morfología'],
+      ['Pragmática', 'Pragmática'],
+      ['Pragmática discursiva', 'Pragmática discursiva'],
+      ['Semantica', 'Semantica'],
+      ['Sintaxis', 'Sintaxis'],
+      ['Sin especificar', 'n']
     ]
   end
 
