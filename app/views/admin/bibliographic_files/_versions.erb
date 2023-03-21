@@ -1,6 +1,7 @@
 <div class="py-3 fs-4">
 		<table class="table table-borderless">
 			<% @bibliographic_files.each.with_index(1) do |file, index| %>
+				<% next if file.reify.nil? %>
 				<tbody>
 					<td>Versión <%= index %></td>
 					<td>Editado por <%= full_name(User.find(file.whodunnit)) %></td>
