@@ -1,28 +1,30 @@
-<div class="card mb-3 px-0">
-  <div class="card-header bg-primary">
-    Filtros
-  </div>
-  <div class="card-body">
-		<%= search_form_for @q, url: url do |f| %>					
-			<%= f.label "Nivel de lengua" %>
-			<%= f.select :n1_matches, n1s, { include_blank: true }, {class: "form-select" } %>
-			
-			<%= f.label "Lenguaje", class: "mt-3 mb-1" %>
-			<div class="mb-3">
-			<% languages.each do |lang| %>
-				<%= lang %>
-				<%= f.check_box :language_y_in, {multiple: true, class: "form-check-input me-4"}, lang, nil %>
-			<% end %>
-			</div>
-			
+<div class="px-4">
+	<div class="card mb-3 px-0">
+	<div class="card-header bg-primary">
+		Filtros
+	</div>
+	<div class="card-body">
+			<%= search_form_for @q, url: url do |f| %>					
+				<%= f.label "Nivel de lengua" %>
+				<%= f.select :n1_matches, n1s, { include_blank: true }, {class: "form-select" } %>
+				
+				<%= f.label "Lenguaje", class: "mt-3 mb-1" %>
+				<div class="mb-3">
+				<% languages.each do |lang| %>
+					<%= lang %>
+					<%= f.check_box :language_y_in, {multiple: true, class: "form-check-input me-4"}, lang, nil %>
+				<% end %>
+				</div>
+				
 
-			<%= f.label "Busqueda" %>
-			<%= f.text_field :title_or_b_data_cont, class: 'form-control' %>
-			<%= f.submit "Buscar", class: 'btn btn-primary mt-3 mb-3' %>
-			<%= link_to "Limpiar", request.path, class: "btn btn-light mt-3 mb-3" %>
-		<% end %>
-		<p>Hay <%= @results %> resultados </p>
-  </div>
+				<%= f.label "Busqueda" %>
+				<%= f.text_field :title_or_b_data_cont, class: 'form-control' %>
+				<%= f.submit "Buscar", class: 'btn btn-primary mt-3 mb-3' %>
+				<%= link_to "Limpiar", request.path, class: "btn btn-light mt-3 mb-3" %>
+			<% end %>
+			<p>Hay <%= @results %> resultados </p>
+	</div>
+	</div>
 </div>
 
 <% if device == "desktop" %>
