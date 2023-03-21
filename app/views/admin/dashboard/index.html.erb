@@ -5,6 +5,7 @@
 		<div class="card-body">
 			<table class="table table-borderless">
 				<% @versions.each do |version| %>
+					<% next if version.reify.nil? %>
 					<tbody>
 						<td>Cambio <%= version.id %></td>
 						<td>Archivo bibliográfico <%= version.item_id %></td>
