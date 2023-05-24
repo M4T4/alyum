@@ -8,7 +8,7 @@ module UserHelper
   def full_name(user)
     return 'Sin nombre' if blank_name?(user)
 
-    [user.first_name.capitalize, user.last_name.capitalize].join(' ')
+    [user.first_name, user.last_name].join(' ')
   end
 
   def name_initials(user)
