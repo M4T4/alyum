@@ -61,6 +61,16 @@
     <hr />
     <br />
     <legend class="text-center">Datos B</legend>
+    <% if @bibliographic_file.b_data %>
+      <div class="pb-3">
+        <div class="card">
+          <div class="card-body">
+            <p class="h4">Mostrando </p>
+            <%= @bibliographic_file.b_data %>
+          </div>
+        </div>
+      </div>
+    <% end %>
     <div class="row g-3 mb-3">
       <div class="col-4">
         <%= form.label "journal_bookname" %>
