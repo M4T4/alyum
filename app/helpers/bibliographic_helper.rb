@@ -30,6 +30,21 @@ module BibliographicHelper
     %w[n1 n2]
   end
 
+  def n1_levels
+    [
+      'Descripción',
+      'Documentación',
+      'Fonología', 
+      'Lexicosemántico',
+      'Morfología',
+      'Pragmática',
+      'Pragmática discursiva', 
+      'Semantica', 
+      'Sintaxis', 
+      'Sin especificar', 
+    ]
+  end
+
   def n1s
     [
       ['Descripción', 'Descripción'],
