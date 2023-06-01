@@ -15,7 +15,7 @@
     <%= form.label "Rol", class: "form-label" %>
     <%= form.select :role, User.roles.keys.to_a, {}, {:class => "form-select"} %>  
   </div>
-  <div class="actions">
-    <%= form.submit "Sign up", class: "btn btn-primary" %>
+  <div class="actions float-end">
+    <%= form.submit "Actualizar", class: "btn btn-primary" %>
   </div>
 <% end %>

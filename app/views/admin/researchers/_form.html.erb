@@ -18,12 +18,12 @@
 
   <div class="row g-3 mb-3">
     <div class="col-6">
-      <%= form.label "Lenguaje principal", class: "form-label" %>
-      <%= form.select :main_language, languages, { include_blank: "- Lenguaje -"}, {:class => "form-select"}  %>
+      <%= form.label "Lengua principal", class: "form-label" %>
+      <%= form.select :main_language, languages, { include_blank: "- lengua -"}, {:class => "form-select"}  %>
     </div> 
     <div class="col-6">
-      <%= form.label "Nivel de lenguaje", class: "form-label" %>
-      <%= form.select :main_language_level, language_levels, { include_blank: "- Nivel -"}, {:class => "form-select"}  %>
+      <%= form.label "Nivel de lengua que estudia", class: "form-label" %>
+      <%= form.select :main_language_level, n1_levels, { include_blank: "- Nivel -"}, {:class => "form-select"}  %>
     </div>	
   </div>
   <div class="mb-3">
@@ -37,6 +37,6 @@
 
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-    <%= form.submit "Agregar investigador", class: "btn btn-primary" %>
+    <%= form.submit "Guardar", class: "btn btn-primary" %>
   </div>
 <% end %>

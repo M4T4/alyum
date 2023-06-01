@@ -18,37 +18,37 @@
         <%= form.select :document_type, document_types, {include_blank: true}, {:class => "form-select"} %>
       </div>
       <div class="col-6">
-        <%= form.label "Lenguaje del documento" %>
+        <%= form.label "Lengua del documento" %>
         <%= form.text_field :document_language, class: "form-control" %>
       </div>
     </div>
     <div class="row g-3 mb-3">
       <div class="col-6">
-        <%= form.label "Primer lenguaje" %>
+        <%= form.label "Primer lengua" %>
         <%= form.text_field :language_y, class: "form-control" %>
       </div>
       <div class="col-6">
-        <%= form.label "Segundo lenguaje" %>
+        <%= form.label "Segundo lengua" %>
         <%= form.text_field :language_y2, class: "form-control" %>
       </div>
     </div>
     <div class="row g-3 mb-3">
       <div class="col-4">
-        <%= form.label "Nombre del investigador" %>
+        <%= form.label "Nombre(s) del/a autor/a principal" %>
         <%= form.text_field :researcher_first_name, class: "form-control" %>
       </div>
       <div class="col-4">
-        <%= form.label "Apellido del investigador" %>
+        <%= form.label "Apellido(s) del/a autor/a principal" %>
         <%= form.text_field :researcher_last_name, class: "form-control" %>
       </div>
       <div class="col-4">
-        <%= form.label "Genero" %>
+        <%= form.label "Género" %>
         <%= form.text_field :gender, class: "form-control" %>
       </div>
     </div>
     <div class="row g-3 mb-3">
       <div class="col-8">
-        <%= form.label "Titulo" %>
+        <%= form.label "Título" %>
         <%= form.text_field :title, class: "form-control" %>
       </div>
       <div class="col-4">
@@ -61,6 +61,16 @@
     <hr />
     <br />
     <legend class="text-center">Datos B</legend>
+    <% if @bibliographic_file.b_data %>
+      <div class="pb-3">
+        <div class="card">
+          <div class="card-body">
+            <p class="h4">Mostrando </p>
+            <%= @bibliographic_file.b_data %>
+          </div>
+        </div>
+      </div>
+    <% end %>
     <div class="row g-3 mb-3">
       <div class="col-4">
         <%= form.label "journal_bookname" %>
