@@ -32,6 +32,11 @@
           <i class="bi bi-book" style="color:black"></i>
         <% end %>
       </td>
+      <td>
+        <%= link_to admin_bibliographic_file_researchers_path(bibliographic_file), "data-controller": "turbo" do %>
+          <i class="bi bi-person" style="color:black"></i>
+        <% end %>
+      </td>
     <% end %>
   </tr>
 </div>
