@@ -22,6 +22,9 @@ Rails.application.routes.draw do
     resources :projects
     resources :bibliographic_files do
       get "versions", to: "bibliographic_files#versions"
+      get "researchers", to: "bibliographic_files#researchers"
+      post "add_researcher", to: "bibliographic_files#add_researcher"
+      post "remove_researcher", to: "bibliographic_files#remove_researcher"
     end
     resources :researchers do
       get 'user_researcher', on: :new

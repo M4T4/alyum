@@ -1,0 +1,54 @@
+<div class="py-3">
+  <%# No es la mejor solucion para un empty hash%>
+  <% if @bibliographic_file.secondary_authors.empty? %> 
+    <p> No hay investigadores secundarios.</p>
+  <% else %>
+    <h6>Lista de investigadores secundarios</h6>
+    <% @bibliographic_file.secondary_authors.each do |author| %>
+      <p> - <%= author.full_name %> </p>
+    <% end %>
+  <% end %>
+  <br />
+  <hr />
+  <h6>Agregar nuevo investigador secundario</h6>
+  <%= form_with(url: admin_bibliographic_file_add_researcher_path(@bibliographic_file)) do |form| %>
+    <div class="row g-3 mb-3">
+      <div class="col-4">
+        <p>Nombre(s)</p>
+      </div>
+      <div class="col">
+        <%= form.text_field :first_name, class: "form-control" %>
+      </div>
+    </div>
+    <div class="row g-3 mb-3">
+      <div class="col-4">
+        <p>Apellido(s)</p>
+      </div>
+      <div class="col">
+        <%= form.text_field :last_name, class: "form-control" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <%= form.submit "Guardar", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+  <% if @bibliographic_file.secondary_authors.any? %> 
+    <br />
+    <hr />
+    <%= form_with(url: admin_bibliographic_file_remove_researcher_path(@bibliographic_file)) do |form| %>
+      <div class="row g-3 mb-3">
+        <div class="col-4">
+          <p> Remover investigador </p>
+        </div>
+        <div class="col-6">
+          <%= form.collection_select :seondary_author_id, @bibliographic_file.secondary_authors, :id, :first_name, {include_blank: true}, {:class => "form-select"} %>
+        </div>
+        <div class="col-2">
+          <%= form.submit "Remover", class: "btn btn-danger" %>
+        </div>
+      </div>
+    <% end %>
+  <% end %> 
+</div>

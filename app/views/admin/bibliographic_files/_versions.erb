@@ -4,7 +4,11 @@
 				<% next if file.reify.nil? %>
 				<tbody>
 					<td>Versión <%= index %></td>
-					<td>Editado por <%= full_name(User.find(file.whodunnit)) %></td>
+					<% if file.whodunnit %>
+						<td>Editado por <%= full_name(User.find(file.whodunnit)) %></td>
+					<% else %>
+						<td></td>
+					<% end %>
 					<td class="text-muted"><%= file.created_at %></td>
 					<td><i class="bi bi-arrow-down-circle-fill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<%= file.id %>" aria-expanded="false" aria-controls="collapseExample"></i></td>
 					<tr>	

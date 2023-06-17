@@ -13,7 +13,7 @@
     <div class="container-fluid">
       <div class="row flex-nowrap">
         <%= render 'layouts/sidebar' %>
-        <div class="col p-3">
+        <div class="offset-2 col-10">
           <% flash.each do |message_type, message| %>
             <div class="alert alert-<%= message_type == "alert" ? "danger" : "success" %> mt-3"><%= message %></div>
           <% end %>
