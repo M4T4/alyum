@@ -123,39 +123,45 @@
     <hr />
     <br />
     <div class="row g-3 mb-3">
-      <div class="col fs-5 text-center">
-        <%= form.label "¿Candado libre?" %>
-        <%= form.check_box :free_lock, class: "form-check-input" %>
+      <div class="col-6 fs-5">
+        <div>
+          <%= form.label "¿Candado libre?" %>
+          <%= form.check_box :free_lock, class: "form-check-input" %>
+        </div>
+        <div>
+          <%= form.label "¿Es un manuscrito?" %>
+          <%= form.check_box :ms, class: "form-check-input" %>
+        </div>
+        <div>
+          <%= form.label "¿Se puede descargar directamente un PDF?" %>
+          <%= form.check_box :pdf, class: "form-check-input" %>
+        </div>
+        <div>
+          <%= form.label "¿Hay un enlace a algún archivo o dirección?" %>
+          <%= form.check_box :has_access, class: "form-check-input", id:"toggle_check" %>
+          <div class=" control-me">
+            <%= form.text_field :acces_link, class: "form-control" %>
+          </div>
+        </div>
       </div>
-      <div class="col fs-5 text-center">
-        <%= form.label "MS" %>
-        <%= form.check_box :ms, class: "form-check-input" %>
+      <div class="col-6 g-3 mb-3">
+        <div>
+          <%= form.label "Pais" %>
+          <%= form.text_field :country, class: "form-control" %>
+        </div>
+        <div>
+          <%= form.label "Base" %>
+          <%= form.text_field :base, class: "form-control"  %>
+        </div>
+        <div>
+          <%= form.label "N1" %>
+          <%= form.select :n1, n1s, {include_blank: true}, {:class => "form-select"}  %>
+        </div>
+        <div>
+          <%= form.label "N2" %>
+          <%= form.select :n2, n1s, {include_blank: true}, {:class => "form-select"}  %>
+        </div>
       </div>
-    </div>
-    <div class="row g-3 mb-3">
-      <div class="col-4">
-        <%= form.label "Pais" %>
-        <%= form.text_field :country, class: "form-control" %>
-      </div>
-      <div class="col-4">
-        <%= form.label "Base" %>
-        <%= form.text_field :base, class: "form-control"  %>
-      </div>
-      <div class="col-4">
-        <%= form.label "Link de acceso" %>
-        <%= form.text_field :acces_link, class: "form-control" %>
-      </div>
-    </div>
-    <div class="row g-3 mb-3">
-      <div class="col-6">
-        <%= form.label "N1" %>
-        <%= form.select :n1, n1s, {include_blank: true}, {:class => "form-select"}  %>
-      </div>
-      <div class="col-6">
-        <%= form.label "N2" %>
-        <%= form.select :n2, n1s, {include_blank: true}, {:class => "form-select"}  %>
-      </div>
-    </div>
     
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

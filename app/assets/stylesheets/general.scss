@@ -12,3 +12,11 @@ html, body {
 body {
     font-family: 'Crimson Text', serif;
 }
+
+.control-me {
+    display: none;
+}
+
+#toggle_check:checked ~ .control-me {
+    display: block;
+}

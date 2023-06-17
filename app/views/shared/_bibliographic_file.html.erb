@@ -2,7 +2,12 @@
 
 <div id="<%= dom_id bibliographic_file %>">
   <tr>
-    <td><%= image_tag("public/drawings/#{bibliographic_file.free_lock == true ? 'lock' : 'unlock'}.svg", width: 10) %></td>
+    <td class="text-center">
+      <%= image_tag("public/drawings/#{bibliographic_file.free_lock == true ? 'lock' : 'unlock'}.svg", width: 10) %>
+      <% if bibliographic_file.pdf %>
+        <i class="bi bi-file-pdf"></i>
+      <% end %>
+    </td>
     <td><%= bibliographic_file.id %></td>
     <td><%= bibliographic_file.year %></td>
     <td>
@@ -16,7 +21,7 @@
     <td><%= bibliographic_file.gender %></td>
     <td><%= bibliographic_file.language_y %></td>
     <td><%= bibliographic_file.language_y %></td>
-    <% if bibliographic_file.ms && bibliographic_file.acces_link %>
+    <% if bibliographic_file.has_access && bibliographic_file.acces_link %>
       <td><%= link_to bibliographic_file.title, bibliographic_file.acces_link %></td>
     <% else %>
       <td><%= bibliographic_file.title %></td>
