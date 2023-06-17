@@ -6,7 +6,9 @@
     <td><%= bibliographic_file.id %></td>
     <td><%= bibliographic_file.year %></td>
     <td>
-      <b><%= resercher_full_name(bibliographic_file) %></b>
+      <b class="pb-3"><%= resercher_full_name(bibliographic_file) %></b>
+      <br />
+      <br />
       <% bibliographic_file.secondary_authors.each do |author|%>
         <p class="m-0"><%= author.full_name %></p>
       <% end %>
