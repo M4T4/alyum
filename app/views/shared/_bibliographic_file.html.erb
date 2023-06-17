@@ -5,7 +5,12 @@
     <td><%= image_tag("public/drawings/#{bibliographic_file.free_lock == true ? 'lock' : 'unlock'}.svg", width: 10) %></td>
     <td><%= bibliographic_file.id %></td>
     <td><%= bibliographic_file.year %></td>
-    <td><%= resercher_full_name(bibliographic_file) %></td>
+    <td>
+      <b><%= resercher_full_name(bibliographic_file) %></b>
+      <% bibliographic_file.secondary_authors.each do |author|%>
+        <p class="m-0"><%= author.full_name %></p>
+      <% end %>
+    </td>
     <td><%= bibliographic_file.gender %></td>
     <td><%= bibliographic_file.language_y %></td>
     <td><%= bibliographic_file.language_y %></td>
