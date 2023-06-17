@@ -43,7 +43,7 @@
           <p> Remover investigador </p>
         </div>
         <div class="col-6">
-          <%= form.collection_select :seondary_author_id, @bibliographic_file.secondary_authors, :id, :first_name, {include_blank: true}, {:class => "form-select"} %>
+          <%= form.collection_select :seondary_author_id, @bibliographic_file.secondary_authors, :id, :full_name, {include_blank: true}, {:class => "form-select"} %>
         </div>
         <div class="col-2">
           <%= form.submit "Remover", class: "btn btn-danger" %>
