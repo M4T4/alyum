@@ -9,7 +9,11 @@
 					<tbody>
 						<td>Cambio <%= version.id %></td>
 						<td>Archivo bibliográfico <%= version.item_id %></td>
-						<td>Editado por <%= full_name(User.find(version.whodunnit)) %></td>
+						<% if version.whodunnit %>
+							<td>Editado por <%= full_name(User.find(version.whodunnit)) %></td>
+						<% else %>
+							<td></td>
+						<% end %>
 						<td class="text-muted"><%= version.created_at %></td>
 						<td><i class="bi bi-arrow-down-circle-fill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<%= version.id %>" aria-expanded="false" aria-controls="collapseExample"></i></td>
 						<tr>	
