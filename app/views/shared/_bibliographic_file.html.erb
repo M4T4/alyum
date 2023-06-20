@@ -7,6 +7,9 @@
       <% if bibliographic_file.pdf %>
         <i class="bi bi-file-pdf"></i>
       <% end %>
+      <% if bibliographic_file.ms %>
+        <i>MS</i>
+      <% end %>
     </td>
     <td><%= bibliographic_file.id %></td>
     <td><%= bibliographic_file.year %></td>
