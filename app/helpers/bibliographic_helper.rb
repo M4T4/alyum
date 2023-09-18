@@ -13,6 +13,7 @@ module BibliographicHelper
       'Havasupai',
       'Hualapai',
       'Kiliwa',
+      "Ko'alh",
       'Kumeyaay',
       'Kumiay',
       'Maricopa',
