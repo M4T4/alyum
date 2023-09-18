@@ -12,7 +12,9 @@
 	<% else %>
 		<% @carousel_elements.each_with_index do |element, index| %>
 				<div class="carousel-item <%= index == 0 ? 'active' : '' %>">
-					<%= cl_image_tag(element.image.key, class: "d-block") %>
+					<a href="<%= element.link.empty? ?  '/' : element.link %>" >
+						<%= cl_image_tag(element.image.key, class: "d-block") %>
+					</a>
 				</div>
 		<% end %>
 	<% end %>

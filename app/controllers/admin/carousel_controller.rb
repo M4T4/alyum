@@ -40,7 +40,7 @@ module Admin
 		end
 
 		def carousel_params
-      params.fetch(:carousel).permit(:id, :position, :visible, :image)
+      params.fetch(:carousel).permit(:id, :position, :visible, :image, :link)
     end
 
 	end
