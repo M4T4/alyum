@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_18_022710) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_18_045320) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -139,8 +139,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_022710) do
     t.string "academic_description", default: "", null: false
     t.string "main_language", default: "", null: false
     t.string "main_language_level", default: "", null: false
-    t.string "contact_email", default: "", null: false
-    t.string "website_link", default: "", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
