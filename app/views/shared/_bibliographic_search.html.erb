@@ -28,6 +28,12 @@
 	</div>
 </div>
 
+<% if current_page?(controller: 'admin/bibliographic_files') %>
+	<div class="d-grid gap-2 col-3 mx-auto">
+		<%= link_to "Nuevo registro", new_admin_bibliographic_file_path, class: "btn btn-primary", "data-controller": "turbo" %>
+	</div>
+<% end %>
+
 <% if device == "desktop" %>
   <%= render partial: 'shared/desktop' %>
 <% else %>
