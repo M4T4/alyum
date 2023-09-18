@@ -13,6 +13,18 @@ body {
     font-family: 'Crimson Text', serif;
 }
 
+.zoom {
+    transition: transform .2s;
+}
+  
+
+  
+.zoom:hover {
+    -ms-transform: scale(1.15); /* IE 9 */
+    -webkit-transform: scale(1.15); /* Safari 3-8 */
+    transform: scale(1.15); 
+}
+
 .control-me {
     display: none;
 }

@@ -51,7 +51,7 @@ module Admin
     def researcher_params
       params.fetch(:researcher).permit(
         :id, :academic_description, :main_language, :main_language_level,
-        :contact_email, :user_id, :image, :first_name, :last_name, :website_link
+        :user_id, :image, :first_name, :last_name
       )
     end
 
@@ -60,8 +60,7 @@ module Admin
 
       Researcher.new(
         first_name: user.first_name,
-        last_name: user.last_name,
-        contact_email: user.email
+        last_name: user.last_name
       )
     end
   end

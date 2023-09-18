@@ -8,6 +8,10 @@
     <%= form.check_box :visible, class: "form-check-input" %>  
   </div>
   <div class="mb-3">
+    <%= form.label "Enlace", class: "form-label" %>
+    <%= form.text_field :link, class: "form-control" %>  
+  </div>
+  <div class="mb-3">
     <%= form.label "Imagen", class: "form-label" %>
     <%= form.file_field :image, direct_upload: true, class: "form-control" %>
   </div>
