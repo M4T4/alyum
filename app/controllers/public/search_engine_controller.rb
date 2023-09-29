@@ -7,5 +7,11 @@ module Public
       @pagy, @files = pagy(@q.result(distinct: true))
       @results = @q.result.count
     end
+
+    def lexico
+      @q = LexicoFile.ransack(params[:q])
+      @pagy, @files = pagy(@q.result(distinct: true))
+      @results = @q.result.count
+    end
   end
 end
