@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get 'researchers', to: 'home#researchers'
     get 'projects', to: 'home#projects'
     get 'graphs', to: 'home#graphs'
-    get 'bibliographic_search_engine', to: 'bibliographic_search_engine#index', as: :search_engine
+    get 'bibliographic_search_engine', to: 'search_engine#bibliographic', as: :bibliographic_search_engine
   end
 
   devise_for :users do

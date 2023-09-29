@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module Public
-  class BibliographicSearchEngineController < ApplicationController
-    def index
+  class SearchEngineController < ApplicationController
+    def bibliographic
       @q = BibliographicFile.ransack(params[:q])
       @pagy, @files = pagy(@q.result(distinct: true))
       @results = @q.result.count
