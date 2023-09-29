@@ -9,9 +9,10 @@ module Public
     end
 
     def lexico
-      @q = LexicoFile.ransack(params[:q])
+      search_params = params[:q]
+      query_base = search_params.present? ? LexicoFile.all : LexicoFile.none
+      @q = query_base.ransack(search_params)
       @pagy, @files = pagy(@q.result(distinct: true))
-      @results = @q.result.count
     end
   end
 end
