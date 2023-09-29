@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_18_045320) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_29_004829) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -126,6 +126,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_045320) do
     t.string "link"
   end
 
+  create_table "lexico_files", force: :cascade do |t|
+    t.string "language"
+    t.string "word"
+    t.string "spanish_word"
+    t.string "english_word"
+    t.string "author"
+    t.integer "year_of_publication"
+    t.string "page"
+    t.string "alphabet"
+    t.bigint "bibliographic_file_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bibliographic_file_id"], name: "index_lexico_files_on_bibliographic_file_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.string "body", default: "", null: false
@@ -182,6 +197,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_045320) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "lexico_files", "bibliographic_files"
   add_foreign_key "researchers", "users"
   add_foreign_key "secondary_authors", "bibliographic_files"
 end
