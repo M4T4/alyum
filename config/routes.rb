@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get 'projects', to: 'home#projects'
     get 'graphs', to: 'home#graphs'
     get 'bibliographic_search_engine', to: 'search_engine#bibliographic', as: :bibliographic_search_engine
+    get 'lexic_search_engine', to: 'search_engine#lexic', as: :lexic_search_engine
   end
 
   devise_for :users do
