@@ -135,6 +135,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_29_004829) do
     t.integer "year_of_publication"
     t.string "page"
     t.string "alphabet"
+    t.string "provider"
+    t.boolean "translated"
+    t.boolean "audio"
     t.bigint "bibliographic_file_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

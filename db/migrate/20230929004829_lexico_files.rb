@@ -9,6 +9,9 @@ class LexicoFiles < ActiveRecord::Migration[7.0]
       t.integer :year_of_publication
       t.string :page
       t.string :alphabet
+      t.string :provider
+      t.boolean :translated
+      t.boolean :audio
       t.references :bibliographic_file, foreign_key: true
 
       t.timestamps

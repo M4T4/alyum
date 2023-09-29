@@ -26,23 +26,40 @@ namespace :custom_task do
       t.n2 = row['N2']
       t.document_type = 'otro'
       t.save
+    end
+  end
 
-      # t. 'journal_bookname'
-      # t. 'editor_record'
-      # t. 'volume'
-      # t. 'volume_number'
-      # t. 'publisher'
-      # t. 'city_country'
-      # t. 'isbn'
-      # t. 'issn'
-      # t. 'doi'
-      # t.integer 'document_type'
-      # t.boolean 'free_lock'
+  desc 'Populate lexic test files'
+  task populate_lexic_test: :environment do
+    csv_text = File.read(Rails.root.join('lib', 'seeds', 'tabla_lexica_prueba_2.csv'))
+    # Esto es lo que se tiene que hacer en caso de generar el csv por medio de excel
+    csv = CSV.parse(csv_text, headers: true, encoding: 'iso-8859-1:utf-8')
+    csv.each do |row|
+      t = LexicoFile.new
+      t.language = row['language']
+      t.word = row['word']
+      t.spanish_word = row['spanish_word']
+      t.english_word = row['english_word']
+      t.author = row['author']
+      t.year_of_publication = row['year_of_publication']
+      t.page = row['page']
+      t.alphabet = row['alphabet']
+      t.provider = row['provider']
+      if row['translated'] == 'Y' 
+        t.translated = 1
+      else
+        t.translated = 0
+      end
 
-      # TODO: Agregar condicionales para que se alimenen con los enums
-      # t.integer 'n1'
-      # t.integer 'n2'
-      # t.integer 'page_number'
+      if row['audio'] == 'Y'
+        t.audio = 1
+      else
+        t.audio = 0
+      end
+
+      date_obj = Date.strptime(row['Fecha'],'%d/%m/%Y')
+      t.created_at = date_obj
+      t.save
     end
   end
 end
