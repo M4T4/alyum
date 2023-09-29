@@ -11,5 +11,9 @@ class LexicoFile < ApplicationRecord
 			"word", "year_of_publication"]
 	end
 
+	def self.ransackable_associations(auth_object = nil)
+    ["versions"]
+  end
+
 
 end

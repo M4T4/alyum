@@ -4,6 +4,17 @@
       .h1= "Buscador léxico"
     .col-8
 
+  .px-4
+    .card.mb-3.px-0
+      .card-header.bg-primary
+        Filtros
+      .card-body
+        = search_form_for @q, url: lexico_search_engine_path do |f|
+          = f.label "Busqueda"
+          = f.text_field :spanish_word_cont, class: 'form-control'
+          = f.submit "Buscar", class: 'btn btn-primary mb-3'
+          = link_to "Limpiar", request.path, class: "btn btn-light mb-3"
+
   %table.table
     %thead
       %tr
