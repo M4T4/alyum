@@ -17,4 +17,16 @@ class BibliographicFile < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     ["secondary_authors", "versions"]
   end
+
+	def page
+		if self.page_number.blank?
+			''
+		else
+			["pp. #{self.page_number}"]
+		end
+	end
+
+	def data
+		[self.journal_bookname, self.publisher, self.city_country, self.volume, self.volume_number, self.page].reject(&:blank?).join(', ')
+	end
 end
