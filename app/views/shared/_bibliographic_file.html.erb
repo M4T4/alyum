@@ -30,8 +30,12 @@
       <td><%= bibliographic_file.title %></td>
     <% end %>
     
+    <% if bibliographic_file.new_b_data == true %>
+      <td><%= bibliographic_file.data %></td>
+    <% else %>
+      <td><%= bibliographic_file.b_data %></td>
+    <% end %>
 
-    <td><%= bibliographic_file.b_data %></td>
     <td><%= bibliographic_file.n1.try(:capitalize) %></td>
     <td><%= bibliographic_file.n2.try(:capitalize) %></td>
     <td><%= bibliographic_file.document_language %></td>

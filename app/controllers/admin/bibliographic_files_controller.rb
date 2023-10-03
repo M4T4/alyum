@@ -82,7 +82,7 @@ module Admin
     end
 
     def bibliographic_file_params
-      params.require(:bibliographic_file).permit(:id, :language_y, :language_y2, :researcher_first_name, :document_language, :pdf, :has_access,
+      params.require(:bibliographic_file).permit(:id, :language_y, :language_y2, :researcher_first_name, :document_language, :pdf, :has_access, :new_b_data,
                                                  :researcher_last_name, :gender, :year, :title, :journal_bookname, :editor_record, :volume, :volume_number, :publisher, :city_country, :isbn, :issn, :doi, :document_type, :country, :acces_link, :free_lock, :ms, :n1, :n2, :page_number, :base)
     end
   end
