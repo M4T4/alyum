@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       post "add_researcher", to: "bibliographic_files#add_researcher"
       post "remove_researcher", to: "bibliographic_files#remove_researcher"
     end
+    resources :lexico_files
     resources :researchers do
       get 'user_researcher', on: :new
     end
