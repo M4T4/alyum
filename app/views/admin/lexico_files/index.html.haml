@@ -15,6 +15,11 @@
           = f.submit "Buscar", class: 'btn btn-primary mb-3'
           = link_to "Limpiar", request.path, class: "btn btn-light mb-3"
 
+  .d-grid.gap-2.col-3.mx-auto
+    = link_to "Nuevo registro", new_admin_lexico_file_path, class: "btn btn-primary", "data-controller": "turbo"
+
+
+
   %table.table
     %thead
       %tr

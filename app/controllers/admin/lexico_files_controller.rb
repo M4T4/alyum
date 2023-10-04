@@ -8,5 +8,9 @@ module Admin
       @results = @q.result.count
     end
 
+    def new
+      @lexico_file = LexicoFile.new
+    end
+
   end
 end

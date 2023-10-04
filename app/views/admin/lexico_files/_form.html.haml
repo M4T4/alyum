@@ -1,0 +1,23 @@
+.py-3
+  = form_with(model: @lexico_file, url: url) do |form|
+    .error_explanation
+      - if @lexico_file.errors.any?
+        %div{:style => "color: red"}
+          %h2
+            = pluralize(@lexico_file.errors.count, "error")
+            prohibited this lexico_file from being saved:
+          %ul
+            - @lexico_file.errors.each do |error|
+              %li= error.full_message
+    .row.g-3.mb-3
+      .col-6
+        = form.label "Lengua"
+        = form.select :language, document_types, {include_blank: true}, {:class => "form-select"}
+      .col-6
+        = form.label "Lengua del documento"
+        = form.text_field :word, class: "form-control"
+
+      .modal-footer
+        %button.btn.btn-secondary{"data-bs-dismiss" => "modal", :type => "button"} Cerrar
+        = form.submit "Guardar", class: "btn btn-primary"
+
