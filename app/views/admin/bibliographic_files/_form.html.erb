@@ -65,8 +65,11 @@
       <div class="pb-3">
         <div class="card">
           <div class="card-body">
-            <p class="h4">Mostrando </p>
+            <p class="h4">Mostrando datos B antiguo </p>
             <%= @bibliographic_file.b_data %>
+            <hr/>
+            <p class="h4">Mostrando datos B nuevo </p>
+            <%= @bibliographic_file.data %>
           </div>
         </div>
       </div>
@@ -117,6 +120,11 @@
       <div class="col-4">
         <%= form.label "Numero de pagina" %>
         <%= form.number_field :page_number, class: "form-control"  %>
+      </div>
+      <div class="col-4">
+        <%= form.label "¿Usar datos b nuevo?" %>
+        <br/>
+        <%= form.check_box :new_b_data, class: "form-check-input" %>
       </div>
     </div>
     <br />

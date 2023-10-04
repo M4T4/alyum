@@ -1,0 +1,50 @@
+.row.bg-white.py-5.px-3
+  .row.pt-2.bg-white
+    .col.my-auto.pb-2
+      .h1= "Buscador léxico"
+    .col-8
+
+  .px-4
+    .card.mb-3.px-0
+      .card-header.bg-primary
+        Filtros
+      .card-body
+        = search_form_for @q, url: lexico_search_engine_path do |f|
+          = f.label "Busqueda"
+          = f.text_field :spanish_word_cont, class: 'form-control'
+          = f.submit "Buscar", class: 'btn btn-primary mb-3'
+          = link_to "Limpiar", request.path, class: "btn btn-light mb-3"
+
+  %table.table
+    %thead
+      %tr
+        %th{scope: "col"}= sort_link(@q, :id, "Id", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :word, "Palabra", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :spanish_word, "Español", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :english_word, "Ingles", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :author, "Autor", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :year_of_publication, "Año de publicación", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :page, "Página", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :alphabet, "Alfabeto", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :provider, "Prestador", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :translated, "Translated", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :audio, "Audio", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :created_at, "Fecha", default_order: :asc)
+    %tbody
+      - @files.each do |file|
+        %div{id: "#{dom_id file}"}
+          %tr
+            %td= file.id
+            %td= file.word 
+            %td= file.spanish_word
+            %td= file.english_word
+            %td= file.author
+            %td= file.year_of_publication
+            %td= file.page
+            %td= file.alphabet
+            %td= file.provider
+            %td= file.translated
+            %td= file.audio
+            %td= file.created_at
+
+  %div.pb-3
