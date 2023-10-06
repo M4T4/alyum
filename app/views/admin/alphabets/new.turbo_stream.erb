@@ -1,0 +1,9 @@
+<%= turbo_stream.replace "remote_modal" do %>
+  <%= render partial: "shared/form_modal", 
+  locals: { 
+    url: admin_alphabets_path,
+    partial: 'admin/alphabets/form',
+    title: "Agregar alfabeto",
+    size: 'modal-l'
+  } %>
+<% end %>
