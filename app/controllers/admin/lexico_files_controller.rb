@@ -15,7 +15,6 @@ module Admin
     end
 
     def create
-      binding.break
 			@lexico_file = LexicoFile.new(lexico_params)
 			if @lexico_file.save
 				redirect_to admin_lexico_files_path, notice: 'Se agrego un nuevo archivo léxico'

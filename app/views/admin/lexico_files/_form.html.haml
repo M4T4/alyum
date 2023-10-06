@@ -38,15 +38,19 @@
         = form.label "Page"
         = form.text_field :page, class: "form-control"
       .col-6
-        = form.label "Ingles"
-        = form.text_field :english_word, class: "form-control"
+        = form.label "Prestador"
+        = form.text_field :provider, class: "form-control"
     .row.g-3.mb-3
       .col-6
-        = form.label "Page"
-        = form.select :alphabet_id, @alphabets.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {:class => "form-select"} 
+        = form.label "Traducido"
+        = form.check_box :translated, class: "form-check-input"
       .col-6
-        = form.label "Ingles"
-        = form.text_field :english_word, class: "form-control"
+        = form.label "Audio"
+        = form.check_box :audio, class: "form-check-input"
+
+    .row.g-3.mb-3
+      = form.label "Seleccionar archivo bibliografico relacionado"
+      = form.select :bibliographic_file_id, BibliographicFile.pluck(:title, :id), {include_blank: true}, {data: { controller: 'slim', slim_target: 'field' } }
 
       .modal-footer
         %button.btn.btn-secondary{"data-bs-dismiss" => "modal", :type => "button"} Cerrar

@@ -1,5 +1,6 @@
 <%= turbo_frame_tag :remote_modal, target: :_top do %>
-  <div class="modal fade" data-controller="modal" tabindex="-1" >
+  <%# Added "data-bs-focus="false"" so slim slect can work inside a modal%>
+  <div class="modal fade" data-controller="modal" tabindex="-1" data-bs-focus="false" >
     <div class="modal-dialog <%= defined?(size).nil? ? '' : size %>">
       <div class="modal-content">
         <div class="modal-header">
