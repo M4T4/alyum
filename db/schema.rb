@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_06_001838) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_06_014311) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -141,13 +141,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_06_001838) do
     t.string "author"
     t.integer "year_of_publication"
     t.string "page"
-    t.string "alphabet"
     t.string "provider"
     t.boolean "translated"
     t.boolean "audio"
     t.bigint "bibliographic_file_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "alphabet_id"
+    t.index ["alphabet_id"], name: "index_lexico_files_on_alphabet_id"
     t.index ["bibliographic_file_id"], name: "index_lexico_files_on_bibliographic_file_id"
   end
 
