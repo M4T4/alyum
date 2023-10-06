@@ -16,7 +16,7 @@
           = link_to "Limpiar", request.path, class: "btn btn-light mb-3"
 
   .d-grid.gap-2.col-3.mx-auto
-    = link_to "Nuevo registro", new_admin_lexico_file_path, class: "btn btn-primary", "data-controller": "turbo"
+    = link_to "Nuevo registro léxico", new_admin_lexico_file_path, class: "btn btn-primary", "data-controller": "turbo"
 
 
 
@@ -24,6 +24,7 @@
     %thead
       %tr
         %th{scope: "col"}= sort_link(@q, :id, "Id", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :language, "Lenguaje", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :word, "Palabra", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :spanish_word, "Español", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :english_word, "Ingles", default_order: :asc)
@@ -40,6 +41,7 @@
         %div{id: "#{dom_id file}"}
           %tr
             %td= file.id
+            %td= file.language 
             %td= file.word 
             %td= file.spanish_word
             %td= file.english_word
