@@ -12,10 +12,41 @@
     .row.g-3.mb-3
       .col-6
         = form.label "Lengua"
-        = form.select :language, document_types, {include_blank: true}, {:class => "form-select"}
+        = form.text_field :language, class: "form-control"
       .col-6
-        = form.label "Lengua del documento"
+        = form.label "Palabra"
         = form.text_field :word, class: "form-control"
+
+    .row.g-3.mb-3
+      .col-6
+        = form.label "Español"
+        = form.text_field :spanish_word, class: "form-control"
+      .col-6
+        = form.label "Ingles"
+        = form.text_field :english_word, class: "form-control"
+
+    .row.g-3.mb-3
+      .col-6
+        = form.label "Autor"
+        = form.text_field :author, class: "form-control"
+      .col-6
+        = form.label "Año de publicación"
+        = form.number_field :year_of_publication, class: "form-control"
+
+    .row.g-3.mb-3
+      .col-6
+        = form.label "Page"
+        = form.text_field :page, class: "form-control"
+      .col-6
+        = form.label "Ingles"
+        = form.text_field :english_word, class: "form-control"
+    .row.g-3.mb-3
+      .col-6
+        = form.label "Page"
+        = form.select :alphabet_id, @alphabets.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {:class => "form-select"} 
+      .col-6
+        = form.label "Ingles"
+        = form.text_field :english_word, class: "form-control"
 
       .modal-footer
         %button.btn.btn-secondary{"data-bs-dismiss" => "modal", :type => "button"} Cerrar

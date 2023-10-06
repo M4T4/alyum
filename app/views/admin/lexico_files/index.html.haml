@@ -31,10 +31,10 @@
         %th{scope: "col"}= sort_link(@q, :author, "Autor", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :year_of_publication, "Año de publicación", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :page, "Página", default_order: :asc)
-        %th{scope: "col"}= sort_link(@q, :alphabet, "Alfabeto", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :provider, "Prestador", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :translated, "Translated", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :audio, "Audio", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :alphabet_id, "Alfabeto", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :created_at, "Fecha", default_order: :asc)
     %tbody
       - @files.each do |file|
@@ -48,10 +48,10 @@
             %td= file.author
             %td= file.year_of_publication
             %td= file.page
-            %td= file.alphabet
             %td= file.provider
             %td= file.translated
             %td= file.audio
+            %td= file.alphabet_id
             %td= file.created_at
 
   %div.pb-1
