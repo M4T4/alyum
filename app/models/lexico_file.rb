@@ -4,6 +4,8 @@ class LexicoFile < ApplicationRecord
 	nilify_blanks
 	has_paper_trail
 
+	has_one :alphabet
+
 
 	def self.ransackable_attributes(auth_object = nil)
 		["alphabet", "audio", "author", "bibliographic_file_id", "created_at", "english_word", 

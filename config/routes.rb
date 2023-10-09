@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       post "remove_researcher", to: "bibliographic_files#remove_researcher"
     end
     resources :lexico_files
+    resources :alphabets
     resources :researchers do
       get 'user_researcher', on: :new
     end

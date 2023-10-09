@@ -1,0 +1,9 @@
+<%= turbo_stream.replace "remote_modal" do %>
+  <%= render partial: "shared/form_modal", 
+  locals: { 
+    url: admin_alphabet_path(@alphabet),
+    partial: 'admin/alphabets/form',
+    title: "Editar archivo ",
+    size: 'modal-l'
+  } %>
+<% end %>
