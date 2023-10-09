@@ -42,9 +42,12 @@
         = form.text_field :provider, class: "form-control"
     .row.g-3.mb-3
       .col-6
+        = form.label "Alfabeto"
+        = form.select :alphabet_id, @alphabets.collect{|p| [p.name, p.id]}, { include_blank: ""}, {:class => "form-select",}
+      .col-3
         = form.label "Traducido"
         = form.check_box :translated, class: "form-check-input"
-      .col-6
+      .col-3
         = form.label "Audio"
         = form.check_box :audio, class: "form-check-input"
 
