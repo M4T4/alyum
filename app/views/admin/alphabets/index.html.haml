@@ -1,0 +1,21 @@
+.row.bg-white.py-5.px-3
+  .row.pt-2.bg-white
+    .col.my-auto.pb-2
+      .h1= "Alfabetos"
+    .col-8
+
+  %table.table.table-striped.fs-4
+    %tr
+      %th{:scope => "col"} Nombre
+      %th{:scope => "col"} Imágen
+      %th
+    - @alphabets.each do |alphabet|
+      %tr
+        %td= alphabet.name
+        %td= link_to image_tag alphabet.image, alt: "Download file" 
+
+        %td
+          = link_to edit_admin_alphabet_path(alphabet), "data-controller": "turbo" do
+            %i.bi.bi-files{:style => "color:black"}
+  .text-center
+    = link_to "Agregar alfabeto", new_admin_alphabet_path, "data-controller": "turbo", class: 'btn btn-primary mx-2'
