@@ -1,3 +1,10 @@
+-# Remover estos y agregarlos en el application html
+%script{:src => "https://unpkg.com/@popperjs/core@2"}
+%script{:src => "https://unpkg.com/tippy.js@6"}
+
+
+
+
 .row.bg-white.py-5.px-3
   .row.pt-2.bg-white
     .col.my-auto.pb-2
@@ -18,9 +25,7 @@
   .d-grid.gap-2.col-3.mx-auto
     = link_to "Nuevo registro léxico", new_admin_lexico_file_path, class: "btn btn-primary", "data-controller": "turbo"
 
-
-
-  %table.table
+  %table.table{"data-controller" => "tippy"}
     %thead
       %tr
         %th{scope: "col"}= sort_link(@q, :id, "Id", default_order: :asc)
@@ -40,8 +45,8 @@
       - @files.each do |file|
         %div{id: "#{dom_id file}"}
           %tr
-            %td= file.id
-            %td= file.language 
+            %td#tippy= file.id
+            %td#tippy{"data-tippy-content"=>"hello"}= file.language 
             %td= file.word 
             %td= file.spanish_word
             %td= file.english_word
