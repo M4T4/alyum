@@ -2,6 +2,7 @@
 
 module Admin
   class LexicoFilesController < BaseController
+    include ActiveStorage::SetCurrent
 
     def index
       @q = LexicoFile.ransack(params[:q])
@@ -27,7 +28,7 @@ module Admin
 
     def lexico_params
       params.fetch(:lexico_file).permit(:id, :language, :word, :spanish_word, :english_word, 
-        :author, :year_of_publication, :page, :provider, :translated, :audio, 
+        :author, :year_of_publication, :page, :provider, :translated, :audio, :audio_file,
         :bibliographic_file_id, :alphabet_id)
     end
   end

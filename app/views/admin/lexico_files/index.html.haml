@@ -58,6 +58,8 @@
             %td= file.audio
             %td= file.alphabet_id
             %td= file.created_at
+            - if file.audio == true
+              %td= audio_tag Rails.application.routes.url_helpers.rails_blob_url(file.audio_file, only_path: true ), controls: true
 
   %div.pb-1
 
