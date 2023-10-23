@@ -1,0 +1,9 @@
+<%= turbo_stream.replace "remote_modal" do %>
+  <%= render partial: "shared/form_modal", 
+  locals: { 
+    url: admin_lexico_file_path(@lexico_file),
+    partial: 'admin/lexico_files/form',
+    title: "Editar archivo #{@lexico_file.id}",
+    size: 'modal-xl'
+  } %>
+<% end %>
