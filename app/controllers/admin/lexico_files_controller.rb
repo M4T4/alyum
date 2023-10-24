@@ -11,6 +11,10 @@ module Admin
       @results = @q.result.count
     end
 
+    def alphabet
+      @alphabet = Alphabet.find(params[:alphabet_id])
+    end
+
     def new
       @lexico_file = LexicoFile.new
       @alphabets = Alphabet.all
