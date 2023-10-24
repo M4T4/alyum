@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get 'graphs', to: 'home#graphs'
     get 'bibliographic_search_engine', to: 'search_engine#bibliographic', as: :bibliographic_search_engine
     get 'lexico_search_engine', to: 'search_engine#lexico', as: :lexico_search_engine
+    get "alphabet", to: 'search_engine#alphabet', as: :alphabet_lexico_search_engine
   end
 
   devise_for :users do
@@ -27,7 +28,9 @@ Rails.application.routes.draw do
       post "add_researcher", to: "bibliographic_files#add_researcher"
       post "remove_researcher", to: "bibliographic_files#remove_researcher"
     end
-    resources :lexico_files
+    resources :lexico_files do
+      get "alphabet", to: "lexico_files#alphabet"
+    end
     resources :alphabets
     resources :researchers do
       get 'user_researcher', on: :new

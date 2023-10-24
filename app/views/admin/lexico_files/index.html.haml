@@ -16,7 +16,7 @@
       .card-header.bg-primary
         Filtros
       .card-body
-        = search_form_for @q, url: lexico_search_engine_path do |f|
+        = search_form_for @q, url: admin_lexico_files_path do |f|
           = f.label "Busqueda"
           = f.text_field :spanish_word_cont, class: 'form-control'
           = f.submit "Buscar", class: 'btn btn-primary mb-3'
@@ -34,13 +34,13 @@
         %th{scope: "col"}= sort_link(@q, :spanish_word, "Español", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :english_word, "Ingles", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :author, "Autor", default_order: :asc)
-        %th{scope: "col"}= sort_link(@q, :year_of_publication, "Año de publicación", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :year, "Año de publicación", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :page, "Página", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :provider, "Prestador", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :translated, "Translated", default_order: :asc)
-        %th{scope: "col"}= sort_link(@q, :audio, "Audio", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :alphabet_id, "Alfabeto", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :created_at, "Fecha", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :audio, "Audio", default_order: :asc)
     %tbody
       - @files.each do |file|
         %div{id: "#{dom_id file}"}
@@ -50,14 +50,27 @@
             %td= file.word 
             %td= file.spanish_word
             %td= file.english_word
-            %td= file.author
-            %td= file.year_of_publication
+            %td= resercher_full_name(file)
+            %td= file.year
             %td= file.page
             %td= file.provider
             %td= file.translated
-            %td= file.audio
-            %td= file.alphabet_id
-            %td= file.created_at
+            - if file.alphabet_id
+              %td
+                = link_to admin_lexico_file_alphabet_path(file, alphabet_id: file.alphabet_id), "data-controller": "turbo" do
+                  %i.bi.bi-images{style: "color:black"}
+            - else
+              %td              
+            %td= file.created_at.strftime("%Y-%m-%d")
+            - if file.audio == true
+              %td= audio_tag  Rails.application.routes.url_helpers.rails_blob_url(file.audio_file, only_path: true ), controls: true, controlslist: "nodownload noplaybackrate"
+            - else
+              %td
+            %td
+              = link_to edit_admin_lexico_file_path(file), "data-controller": "turbo" do
+                %i.bi.bi-files{style: "color:black"}
+
+            
 
   %div.pb-1
 

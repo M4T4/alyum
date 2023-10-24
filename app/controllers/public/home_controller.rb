@@ -24,12 +24,12 @@ module Public
       years_b = BibliographicFile.where(year: [nil,"0"]).count
       @years = { "S/E" => years_b }.merge(years_a)
 
-      language_a = BibliographicFile.where.not(language_y: [nil,"n",""]).group(:language_y).count
-      language_b = BibliographicFile.where(language_y: [nil,"n", ""]).count
+      language_a = BibliographicFile.where.not(language_y: [nil,"n","", "N"]).group(:language_y).count
+      language_b = BibliographicFile.where(language_y: [nil,"n", "", "N"]).count
       @language_y = { "S/E" => language_b }.merge(language_a)
 
-      n1_a = BibliographicFile.where.not(n1: [nil,"n", ""]).group(:n1).count
-      n1_b = BibliographicFile.where(n1: [nil,"n", ""]).count
+      n1_a = BibliographicFile.where.not(n1: [nil,"n", "", "N"]).group(:n1).count
+      n1_b = BibliographicFile.where(n1: [nil,"n", "", "N"]).count
       @n1 = { "S/E" => n1_b }.merge(n1_a)
     
 

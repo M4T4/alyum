@@ -138,8 +138,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_06_014311) do
     t.string "word"
     t.string "spanish_word"
     t.string "english_word"
-    t.string "author"
-    t.integer "year_of_publication"
     t.string "page"
     t.string "provider"
     t.boolean "translated"
