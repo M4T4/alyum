@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get 'graphs', to: 'home#graphs'
     get 'bibliographic_search_engine', to: 'search_engine#bibliographic', as: :bibliographic_search_engine
     get 'lexico_search_engine', to: 'search_engine#lexico', as: :lexico_search_engine
+    get "alphabet", to: 'search_engine#alphabet', as: :alphabet_lexico_search_engine
   end
 
   devise_for :users do

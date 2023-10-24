@@ -1,0 +1,9 @@
+<%= turbo_stream.replace "remote_modal" do %>
+  <%= render partial: "shared/form_modal", 
+  locals: { 
+    url: "",
+    partial: 'public/search_engine/alphabet',
+    title: "Alfabeto",
+    size: 'modal-xl'
+  } %>
+<% end %>

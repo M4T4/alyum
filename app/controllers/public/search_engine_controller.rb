@@ -14,5 +14,9 @@ module Public
       @q = query_base.ransack(search_params)
       @pagy, @files = pagy(@q.result(distinct: true))
     end
+
+    def alphabet
+      @alphabet = Alphabet.find(params[:alphabet_id])
+    end
   end
 end
