@@ -19,6 +19,7 @@
     %thead
       %tr
         %th{scope: "col"}= sort_link(@q, :id, "Id", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :language, "Lenguaje", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :word, "Palabra", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :spanish_word, "Español", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :english_word, "Ingles", default_order: :asc)
@@ -32,11 +33,12 @@
         %div{id: "#{dom_id file}"}
           %tr
             %td= file.id
+            %td= file.language 
             %td= file.word 
             %td= file.spanish_word
             %td= file.english_word
-            %td= file.author
-            %td= file.year_of_publication
+            %td= resercher_full_name(file)
+            %td= file.year
             %td= file.page
             %td= file.alphabet_id
             - if file.audio == true

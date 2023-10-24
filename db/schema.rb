@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_06_014311) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_24_010304) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -138,8 +138,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_06_014311) do
     t.string "word"
     t.string "spanish_word"
     t.string "english_word"
-    t.string "author"
-    t.integer "year_of_publication"
     t.string "page"
     t.string "provider"
     t.boolean "translated"

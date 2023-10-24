@@ -34,7 +34,7 @@
         %th{scope: "col"}= sort_link(@q, :spanish_word, "Español", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :english_word, "Ingles", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :author, "Autor", default_order: :asc)
-        %th{scope: "col"}= sort_link(@q, :year_of_publication, "Año de publicación", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :year, "Año de publicación", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :page, "Página", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :provider, "Prestador", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :translated, "Translated", default_order: :asc)
@@ -50,8 +50,8 @@
             %td= file.word 
             %td= file.spanish_word
             %td= file.english_word
-            %td= file.author
-            %td= file.year_of_publication
+            %td= resercher_full_name(file)
+            %td= file.year
             %td= file.page
             %td= file.provider
             %td= file.translated
