@@ -5,18 +5,27 @@
     .col-8
 
   - @repositories.each do |repo|
-    = render(RepoCardComponent.new(name: repo.title, 
-    image_url: repo.image, 
-    description: repo.description, 
-    date_creation: repo.date_of_creation,
-    language: repo.language))
+    .row
+      .col-10
+        = render(RepoCardComponent.new(name: repo.title, 
+        image_url: repo.image, 
+        description: repo.description, 
+        date_creation: repo.date_of_creation,
+        language: repo.language))
+      .col-2.my-auto
+        = link_to "editar repositorio", edit_admin_repository_path(repo), "data-controller": "turbo", class: 'btn btn-secondary mx-2'
     %div.px-4
       - repo.secondary_projects.each do |secondary|
-        = render(RevealCardComponent.new(name: secondary.title, 
-        description: secondary.description, 
-        language: secondary.language,
-        date_creation: secondary.date_of_creation,
-        main_project: secondary.main_project.title))
+        .row
+          .col-10
+            = render(RevealCardComponent.new(name: secondary.title, 
+            description: secondary.description, 
+            language: secondary.language,
+            date_creation: secondary.date_of_creation,
+            main_project: secondary.main_project.title))
+          .col-2
+            = link_to "editar repositorio", edit_admin_repository_path(secondary), "data-controller": "turbo", class: 'btn btn-secondary mx-2'
+
 
   .text-center
     = link_to "Agregar repositorio", new_admin_repository_path, "data-controller": "turbo", class: 'btn btn-primary mx-2'
