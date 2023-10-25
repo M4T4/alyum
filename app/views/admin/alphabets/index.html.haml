@@ -12,7 +12,7 @@
     - @alphabets.each do |alphabet|
       %tr
         %td= alphabet.name
-        %td= link_to image_tag alphabet.image, alt: "Download file" 
+        %td= markdown(alphabet.text)
 
         %td
           = link_to edit_admin_alphabet_path(alphabet), "data-controller": "turbo" do

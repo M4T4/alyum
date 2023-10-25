@@ -13,8 +13,8 @@
       = form.label "Nombre"
       = form.text_field :name, class: "form-control"
     .row.g-3.mb-3
-      = form.label "Imágen"
-      = form.file_field :image, direct_upload: true, class: "form-control"
+      = form.label "Texto"
+      = form.text_area :text, class: "form-control", rows: "6"
 
     .modal-footer
       %button.btn.btn-secondary{"data-bs-dismiss" => "modal", :type => "button"} Cerrar
