@@ -28,7 +28,7 @@ module Admin
 
     def repository_params
       params.fetch(:repository).permit(:id, :title, :language,
-        :date_of_creation, :description, :project_type, :image)
+        :date_of_creation, :description, :project_type, :image, :main_project_id)
     end
 
   end

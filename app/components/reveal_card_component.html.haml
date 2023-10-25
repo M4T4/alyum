@@ -1,0 +1,18 @@
+.card.my-2.w-100
+  .card-body
+    .row
+      .col-10
+        %div.card-title.display-5= @name.capitalize
+      .col-2 
+        = "Proyecto principal: #{@main_project}"
+    - if device == "desktop"
+      .card-text.fs-4.text-secondary
+        %strong= "#{@language.capitalize} | #{@date_creation.strftime("%Y-%m-%d")}"
+      .card-text.fs-4= markdown(@description)
+    - else
+      .card-text.fs-4.text-secondary
+        %strong= "#{@language.capitalize} | #{@date_creation.strftime("%Y-%m-%d")}"
+      %a.h3{"aria-controls" => "collapseExample", "aria-expanded" => "false", "data-bs-toggle" => "collapse", href: "#collapseExample", role: "button"}
+        Ver descripción académica
+      #collapseExample.collapse
+        .card.card-body.fs-4= markdown(@description)

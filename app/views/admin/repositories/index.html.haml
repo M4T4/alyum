@@ -9,8 +9,13 @@
     image_url: repo.image, 
     description: repo.description, 
     language: repo.language))
-    .h2= "Projectos secundarios"
-      
+    %div.px-4
+      - repo.secondary_projects.each do |secondary|
+        = render(RevealCardComponent.new(name: secondary.title, 
+        description: secondary.description, 
+        language: secondary.language,
+        date_creation: secondary.date_of_creation,
+        main_project: secondary.main_project.title))
 
   .text-center
     = link_to "Agregar repositorio", new_admin_repository_path, "data-controller": "turbo", class: 'btn btn-primary mx-2'
