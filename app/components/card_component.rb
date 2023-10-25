@@ -3,7 +3,7 @@
 class CardComponent < ViewComponent::Base
   include ApplicationHelper
 
-  def initialize(name:, image_url:, description:, language:, level:)
+  def initialize(name:, image_url:, description:, language:, level: nil)
     @name = name
     @image_url = image_url.present? ? image_url.key : 'public/about_us/volcan.jpg'
     @description = description

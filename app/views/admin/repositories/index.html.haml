@@ -4,6 +4,14 @@
       .h1= "Repositorios"
     .col-8
 
+  - @repositories.each do |repo|
+    = render(CardComponent.new(name: repo.title, 
+    image_url: repo.image, 
+    description: repo.description, 
+    language: repo.language))
+    .h2= "Projectos secundarios"
+      
+
   .text-center
     = link_to "Agregar repositorio", new_admin_repository_path, "data-controller": "turbo", class: 'btn btn-primary mx-2'
 

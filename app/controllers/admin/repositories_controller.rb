@@ -23,7 +23,7 @@ module Admin
     private
 
     def set_repositories
-      @repositories = Repository.all
+      @repositories = Repository.all.where(project_type: "main")
     end
 
     def repository_params

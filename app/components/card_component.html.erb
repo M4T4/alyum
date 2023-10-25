@@ -14,10 +14,14 @@
 				<% if device == "desktop" %>
 					<div class="card-text fs-4"><%= markdown(@description) %></div>
 					<div class="card-text fs-4"><strong>Lengua principal:</strong> <%= @language %></div>
-					<div class="card-text fs-4"><strong>Nivel de lengua:</strong> <%= @level %></div>
+					<% if !@level.nil?%>
+						<div class="card-text fs-4"><strong>Nivel de lengua:</strong> <%= @level %></div>
+					<% end %>
 				<% else %>
 					<div class="card-text fs-4"><strong>Lengua principal:</strong> <%= @language %></div>
-					<div class="card-text fs-4"><strong>Nivel de lengua:</strong> <%= @level %></div>
+					<% if !@level.nil?%>
+						<div class="card-text fs-4"><strong>Nivel de lengua:</strong> <%= @level %></div>
+					<% end %>
 					<a class="h3" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
 						Ver descripción académica
 					</a>
