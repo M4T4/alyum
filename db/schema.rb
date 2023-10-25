@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_25_003002) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_25_005801) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -158,6 +158,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_003002) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "repositories", force: :cascade do |t|
+    t.string "title"
+    t.string "language"
+    t.string "description"
+    t.integer "project_type", default: 0
+    t.datetime "date_of_creation"
+    t.bigint "main_project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["main_project_id"], name: "index_repositories_on_main_project_id"
+  end
+
   create_table "researchers", force: :cascade do |t|
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
@@ -208,6 +220,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_003002) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "lexico_files", "bibliographic_files"
+  add_foreign_key "repositories", "repositories", column: "main_project_id"
   add_foreign_key "researchers", "users"
   add_foreign_key "secondary_authors", "bibliographic_files"
 end
