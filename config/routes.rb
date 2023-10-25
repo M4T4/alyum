@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :carousel
     resources :users
     resources :projects
+    resources :repositories
     resources :bibliographic_files do
       get "versions", to: "bibliographic_files#versions"
       get "researchers", to: "bibliographic_files#researchers"
