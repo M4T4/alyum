@@ -43,7 +43,7 @@
             - if file.alphabet_id
               %td
                 = link_to alphabet_lexico_search_engine_path(file, alphabet_id: file.alphabet_id), "data-controller": "turbo" do
-                  %i.bi.bi-images{style: "color:black"}
+                  = image_tag("feather.svg")
             - else
               %td 
             - if file.audio == true
