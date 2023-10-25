@@ -4,6 +4,7 @@ module Admin
   class LexicoFilesController < BaseController
     include ActiveStorage::SetCurrent
     before_action :set_lexico_file, only: %i[edit update]
+    before_action :set_alphabets
 
     def index
       @q = LexicoFile.ransack(params[:q])
@@ -17,12 +18,9 @@ module Admin
 
     def new
       @lexico_file = LexicoFile.new
-      @alphabets = Alphabet.all
     end
     
-    def edit
-      @alphabets = Alphabet.all
-    end
+    def edit;end
 
     def create
 			@lexico_file = LexicoFile.new(lexico_params)
@@ -54,5 +52,8 @@ module Admin
       @lexico_file = LexicoFile.find(params[:id])
     end
 
+    def set_alphabets
+      @alphabets = Alphabet.all
+    end
   end
 end

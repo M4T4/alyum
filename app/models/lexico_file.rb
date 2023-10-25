@@ -6,8 +6,8 @@ class LexicoFile < ApplicationRecord
 
 	has_one_attached :audio_file, service: :local
 	
-	belongs_to :alphabet
-	belongs_to :bibliographic_file
+	belongs_to :alphabet, optional: true
+	belongs_to :bibliographic_file, optional: true
 
 	delegate :researcher_first_name, :researcher_last_name, :year, to: :bibliographic_file, allow_nil: true
 
