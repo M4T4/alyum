@@ -5,9 +5,10 @@
     .col-8
 
   - @repositories.each do |repo|
-    = render(CardComponent.new(name: repo.title, 
+    = render(RepoCardComponent.new(name: repo.title, 
     image_url: repo.image, 
     description: repo.description, 
+    date_creation: repo.date_of_creation,
     language: repo.language))
     %div.px-4
       - repo.secondary_projects.each do |secondary|
@@ -19,5 +20,4 @@
 
   .text-center
     = link_to "Agregar repositorio", new_admin_repository_path, "data-controller": "turbo", class: 'btn btn-primary mx-2'
-
 

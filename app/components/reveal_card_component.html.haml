@@ -1,9 +1,10 @@
-.card.my-2.w-100
-  .card-body
+.card.my-2.w-100{"data-controller" => "reveal", "data-reveal-hidden-class" => "d-none"}
+  %button.btn.card-title{"data-action" => "click->reveal#toggle", type: "button", style:"background-color: #f68920"}= @name.capitalize
+  .card-body.d-none{"data-reveal-target" => "item"}
     .row
-      .col-10
+      .col-9
         %div.card-title.display-5= @name.capitalize
-      .col-2 
+      .col-3 
         = "Proyecto principal: #{@main_project}"
     - if device == "desktop"
       .card-text.fs-4.text-secondary

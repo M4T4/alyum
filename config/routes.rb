@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get 'yumans', to: 'home#yumans'
     get 'researchers', to: 'home#researchers'
     get 'projects', to: 'home#projects'
+    get 'repositories', to: 'home#repositories'
     get 'graphs', to: 'home#graphs'
     get 'bibliographic_search_engine', to: 'search_engine#bibliographic', as: :bibliographic_search_engine
     get 'lexico_search_engine', to: 'search_engine#lexico', as: :lexico_search_engine

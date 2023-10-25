@@ -1,0 +1,42 @@
+.p-0
+  .row.pt-2.bg-white
+    .col.my-auto.pb-2
+      = image_tag("public/navbar/logo.png", width: 275, class: "mx-3")
+    .col-8
+  .row.pt-2
+    .col.my-auto.pb-2
+    .col-7.text-center.align-self-center
+      %h1.align-items-start.display-1 Repositorios
+    .col.my-auto.pb-2
+      = image_tag("public/drawings/flower.svg", width: 130)
+  .row{style: "background: black"}
+    %hr/
+    %hr/
+    %hr/
+  %div.bg-white.p-5
+    .card.mb-3.px-0
+      .card-header.bg-primary
+        Filtros
+      .card-body
+        = search_form_for @q, url: repositories_path do |f|
+          = f.label "Busqueda"
+          -# = f.text_field :title_or_b_data_cont, class: 'form-control'
+          = f.label "Lengua", class: "mt-3 mb-1"
+          = f.select :language, languages, { include_blank: true }, {class: "form-select" }
+
+          = f.submit "Busqueda avanzada", class: 'btn btn-primary mb-3'
+          = link_to "Limpiar", request.path, class: "btn btn-light mb-3"
+
+    - @repositories.each do |repo|
+      = render(RepoCardComponent.new(name: repo.title, 
+      image_url: repo.image, 
+      description: repo.description, 
+      date_creation: repo.date_of_creation,
+      language: repo.language))
+      %div.px-4
+        - repo.secondary_projects.each do |secondary|
+          = render(RevealCardComponent.new(name: secondary.title, 
+          description: secondary.description, 
+          language: secondary.language,
+          date_creation: secondary.date_of_creation,
+          main_project: secondary.main_project.title))

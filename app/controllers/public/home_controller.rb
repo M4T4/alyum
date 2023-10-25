@@ -19,6 +19,10 @@ module Public
       @projects = Project.all
     end
 
+    def repositories
+      @q = Repository.where(project_type: "main").ransack(params[:q])
+      @repositories = @q.result(distinct: true)
+    end
     def graphs
       years_a = BibliographicFile.where.not(year: [nil,"0"]).order('year ASC').group(:year).count
       years_b = BibliographicFile.where(year: [nil,"0"]).count
