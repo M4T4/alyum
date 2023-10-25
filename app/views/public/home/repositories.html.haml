@@ -20,11 +20,10 @@
       .card-body
         = search_form_for @q, url: repositories_path do |f|
           = f.label "Busqueda"
-          -# = f.text_field :title_or_b_data_cont, class: 'form-control'
           = f.label "Lengua", class: "mt-3 mb-1"
           = f.select :language, languages, { include_blank: true }, {class: "form-select" }
 
-          = f.submit "Busqueda avanzada", class: 'btn btn-primary mb-3'
+          = f.submit "Busqueda avanzada", class: 'btn btn-primary mb-3 mt-3'
           = link_to "Limpiar", request.path, class: "btn btn-light mb-3"
 
     - @repositories.each do |repo|
