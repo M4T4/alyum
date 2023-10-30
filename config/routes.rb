@@ -21,7 +21,10 @@ Rails.application.routes.draw do
   namespace :admin do
     get "dashboard", to: 'dashboard#index'
     resources :carousel
-    resources :users
+    resources :users do 
+      get 'edit_password'
+      patch 'update_password'
+    end
     resources :projects
     resources :repositories
     resources :bibliographic_files do
