@@ -16,7 +16,7 @@
     .row.g-3.mb-3
       .col-6
         = form.label "Lenguaje"
-        = form.select :language, languages, { include_blank: "- lengua -"}, {:class => "form-select"}
+        = form.select :language, Language.all.map(&:name), { include_blank: "- lengua -"}, {:class => "form-select"}
       .col-6
         = form.label "Fecha de creación"
         = form.date_field :date_of_creation, class: "form-control"
