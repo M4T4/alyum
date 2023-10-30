@@ -58,7 +58,7 @@
             - if file.alphabet_id
               %td
                 = link_to admin_lexico_file_alphabet_path(file, alphabet_id: file.alphabet_id), "data-controller": "turbo" do
-                  %i.bi.bi-images{style: "color:black"}
+                  = image_tag("feather.svg")
             - else
               %td              
             %td= file.created_at.strftime("%Y-%m-%d")

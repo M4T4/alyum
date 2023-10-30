@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get 'yumans', to: 'home#yumans'
     get 'researchers', to: 'home#researchers'
     get 'projects', to: 'home#projects'
+    get 'repositories', to: 'home#repositories'
     get 'graphs', to: 'home#graphs'
     get 'bibliographic_search_engine', to: 'search_engine#bibliographic', as: :bibliographic_search_engine
     get 'lexico_search_engine', to: 'search_engine#lexico', as: :lexico_search_engine
@@ -20,8 +21,12 @@ Rails.application.routes.draw do
   namespace :admin do
     get "dashboard", to: 'dashboard#index'
     resources :carousel
-    resources :users
+    resources :users do 
+      get 'edit_password'
+      patch 'update_password'
+    end
     resources :projects
+    resources :repositories
     resources :bibliographic_files do
       get "versions", to: "bibliographic_files#versions"
       get "researchers", to: "bibliographic_files#researchers"
@@ -32,6 +37,7 @@ Rails.application.routes.draw do
       get "alphabet", to: "lexico_files#alphabet"
     end
     resources :alphabets
+    resources :languages
     resources :researchers do
       get 'user_researcher', on: :new
     end

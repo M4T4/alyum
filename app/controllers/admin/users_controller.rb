@@ -2,7 +2,7 @@
 
 module Admin
   class UsersController < BaseController
-    before_action :set_user, only: %i[show edit update destroy]
+    before_action :set_user, only: %i[show edit edit_password update update_password destroy]
     def index
       @users = User.all
     end
@@ -12,6 +12,10 @@ module Admin
     end
 
     def edit; end
+
+    def edit_password
+      
+    end
 
     def show; end
 
@@ -32,10 +36,24 @@ module Admin
       end
     end
 
+    def update_password
+      password = params[:user][:password]
+      binding.break
+      if @user.reset_password(password, password)
+        redirect_to  admin_users_path, notice: 'Se ha actualizado la contraseña del usuario exitosamente'
+      else
+        render :edit, status: :unprocessable_entity
+      end
+    end
+
     private
 
     def set_user
-      @user = User.find(params[:id])
+      if params[:id].nil?
+        @user = User.find(params[:user_id])
+      else
+        @user = User.find(params[:id])
+      end
     end
 
     def user_params

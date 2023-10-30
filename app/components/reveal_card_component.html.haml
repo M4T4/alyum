@@ -1,0 +1,19 @@
+.card.my-2.w-100{"data-controller" => "reveal", "data-reveal-hidden-class" => "d-none"}
+  %button.btn.card-title{"data-action" => "click->reveal#toggle", type: "button", style:"background-color: #f68920"}= @name.capitalize
+  .card-body.d-none{"data-reveal-target" => "item"}
+    .row
+      .col-9
+        %div.card-title.display-5= @name.capitalize
+      .col-3 
+        = "Proyecto principal: #{@main_project}"
+    - if device == "desktop"
+      .card-text.fs-4.text-secondary
+        %strong= "#{@language.capitalize} | #{@date_creation.strftime("%Y-%m-%d")}"
+      .card-text.fs-4= markdown(@description)
+    - else
+      .card-text.fs-4.text-secondary
+        %strong= "#{@language.capitalize} | #{@date_creation.strftime("%Y-%m-%d")}"
+      %a.h3{"aria-controls" => "collapseExample", "aria-expanded" => "false", "data-bs-toggle" => "collapse", href: "#collapseExample", role: "button"}
+        Ver descripción académica
+      #collapseExample.collapse
+        .card.card-body.fs-4= markdown(@description)

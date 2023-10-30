@@ -1,0 +1,45 @@
+.py-3
+  = form_with(model: @repository, url: url) do |form|
+    .error_explanation
+      - if @repository.errors.any?
+        %div{:style => "color: red"}
+          %h2
+            = pluralize(@repository.errors.count, "error")
+            prohibited this lexico_file from being saved:
+          %ul
+            - @repository.errors.each do |error|
+              %li= error.full_message
+    .row.g-3.mb-3
+      .col
+        = form.label "Título"
+        = form.text_field :title, class: "form-control"
+    .row.g-3.mb-3
+      .col-6
+        = form.label "Lenguaje"
+        = form.select :language, Language.all.map(&:name), { include_blank: "- lengua -"}, {:class => "form-select"}
+      .col-6
+        = form.label "Fecha de creación"
+        = form.date_field :date_of_creation, class: "form-control"
+    .row.g-3.mb-3
+      .col
+        = form.label "Descripción"
+        = form.text_area :description, class: "form-control", rows: "6"
+    .div.g-3.mb-3
+      .form-check
+        = form.radio_button :project_type, :main, class: "form-check-input"
+        = form.label t(:main, scope: 'repositories.project_type'), class: "form-check-label"
+      .form-check
+        = form.radio_button :project_type, :secondary, class: "form-check-input", id:"toggle_check"
+        = form.label t(:secondary, scope: 'repositories.project_type'), class: "form-check-label"
+        .control-me
+          = form.select :main_project_id, @repositories.collect{|p| [p.title, p.id]}, { include_blank: ""}, {:class => "form-select"}
+    .row.g-3.mb-3
+      .col
+        = form.file_field :image, direct_upload: true, class: "form-control"
+
+    
+
+    .modal-footer
+      %button.btn.btn-secondary{"data-bs-dismiss" => "modal", :type => "button"} Cerrar
+      = form.submit "Guardar", class: "btn btn-primary"
+

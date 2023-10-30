@@ -1,0 +1,9 @@
+<%= turbo_stream.replace "remote_modal" do %>
+  <%= render partial: "shared/form_modal", 
+  locals: { 
+    url: admin_repositories_path,
+    partial: 'admin/repositories/form',
+    title: "Agregar repositorio",
+    size: 'modal-xl'
+  } %>
+<% end %>

@@ -7,6 +7,7 @@
 		<th scope="col">Rol</th>
 		<th scope="col">Fecha de creación</th>
 		<th></th>
+		<th></th>
 	</tr>
 	<% @users.each do |user|  %>
 		<tr>
@@ -14,10 +15,15 @@
 			<td><%= user.email %></td>
 			<td><%= user.role %></td>
 			<td><%= user.created_at %></td>
-			      <td>
-      <%= link_to edit_admin_user_path(user), "data-controller": "turbo" do %>
-        <i class="bi bi-files" style="color:black"></i>
-      <% end %>
+			<td>
+				<%= link_to edit_admin_user_path(user), "data-controller": "turbo" do %>
+					<i class="bi bi-files" style="color:black"></i>
+				<% end %>
+			</td>
+			 <td>
+				<%= link_to admin_user_edit_password_path(user), "data-controller": "turbo" do %>
+					<%= image_tag("passport.svg", width: 30) %>
+				<% end %>
       </td>
 		</tr>
 	<% end %>

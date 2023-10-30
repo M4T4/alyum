@@ -33,7 +33,7 @@ namespace :custom_task do
   task populate_lexic_test: :environment do
     csv_text = File.read(Rails.root.join('lib', 'seeds', 'joel_test3.csv'))
     # Esto es lo que se tiene que hacer en caso de generar el csv por medio de excel
-    csv = CSV.parse(csv_text, headers: true, encoding: 'iso-8859-1:utf-8')
+    csv = CSV.parse(csv_text, headers: true, encoding: 'UTF-8')
     csv.each do |row|
       t = LexicoFile.new
 
@@ -41,8 +41,6 @@ namespace :custom_task do
       t.word = row['Palabra']
       t.spanish_word = row['Espanol']
       t.english_word = row['Ingles']
-      t.author = row['Autor']
-      t.year_of_publication = row['Ano']
       t.page = row['Pagina']
       # t.alphabet = row['A.F.']
       t.provider = row['Prestador']

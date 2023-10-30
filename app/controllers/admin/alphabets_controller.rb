@@ -38,7 +38,7 @@ module Admin
 		end
 
 		def alphabet_params
-      params.fetch(:alphabet).permit(:id, :name, :image)
+      params.fetch(:alphabet).permit(:id, :name, :text)
     end
 
   end

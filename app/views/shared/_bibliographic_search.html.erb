@@ -13,7 +13,7 @@
 				
 				<%= f.label "Lengua", class: "mt-3 mb-1" %>
 				<div class="mb-3">
-				<% languages.each do |lang| %>
+				<% Language.all.map(&:name).each do |lang| %>
 					<%= lang %>
 					<%= f.check_box :language_y_in, {multiple: true, class: "form-check-input me-4"}, lang, nil %>
 				<% end %>

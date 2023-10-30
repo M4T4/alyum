@@ -38,4 +38,8 @@ en:
         chapter: Capítulo
         master_thesis: Tesis de maestría
         phd_thesis: Tesis de doctorado
-
+  repositories:
+    project_type:
+      hello: "sadasdasda"
+      main: "Proyecto principal"
+      secondary: "Proyecto secundario"
