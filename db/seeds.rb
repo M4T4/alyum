@@ -16,3 +16,22 @@
 # User.find_or_create_by(email: 'msanchez12@uabc.edu.mx',
 #                        password: 'password',
 #                        password_confirmation: 'password')
+
+
+Language.find_or_create_by!(name: 'Cochimi')
+Language.find_or_create_by!(name: 'Cocopa')
+Language.find_or_create_by!(name: 'Diegueño')
+Language.find_or_create_by!(name: 'Havasupai')
+Language.find_or_create_by!(name: 'Hualapai')
+Language.find_or_create_by!(name: 'Kiliwa')
+Language.find_or_create_by!(name: "Ko'alh")
+Language.find_or_create_by!(name: 'Kumeyaay')
+Language.find_or_create_by!(name: 'Kumiay')
+Language.find_or_create_by!(name: 'Maricopa')
+Language.find_or_create_by!(name: 'Mojave')
+Language.find_or_create_by!(name: 'Pa ipai')
+Language.find_or_create_by!(name: 'Tolkapaya')
+Language.find_or_create_by!(name: 'Walapai')
+Language.find_or_create_by!(name: 'Yavapai')
+Language.find_or_create_by!(name: 'Yuma')
+Language.find_or_create_by!(name: 'Yumanas')
