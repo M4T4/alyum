@@ -1,0 +1,9 @@
+<%= turbo_stream.replace "remote_modal" do %>
+  <%= render partial: "shared/form_modal", 
+  locals: { 
+    url: admin_languages_path,
+    partial: 'admin/languages/form',
+    title: "Agregar lenguaje",
+    size: 'modal-l'
+  } %>
+<% end %>

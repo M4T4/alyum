@@ -1,0 +1,19 @@
+.row.bg-white.py-5.px-3
+  .row.pt-2.bg-white
+    .col.my-auto.pb-2
+      .h1= "Lenguajes"
+    .col-8
+
+  %table.table.table-striped.fs-4
+    %tr
+      %th{:scope => "col"} Nombre
+      %th
+    - @languages.each do |language|
+      %tr
+        %td= language.name
+
+        %td
+          = link_to edit_admin_language_path(language), "data-controller": "turbo" do
+            %i.bi.bi-files{:style => "color:black"}
+  .text-center
+    = link_to "Agregar lenguajes", new_admin_language_path, "data-controller": "turbo", class: 'btn btn-primary mx-2'

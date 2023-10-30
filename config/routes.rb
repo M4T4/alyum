@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       get "alphabet", to: "lexico_files#alphabet"
     end
     resources :alphabets
+    resources :languages
     resources :researchers do
       get 'user_researcher', on: :new
     end
