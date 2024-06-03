@@ -10,6 +10,10 @@ module Admin
       @q = LexicoFile.ransack(params[:q])
       @pagy, @files = pagy(@q.result(distinct: true).order("id ASC"))
       @results = @q.result.count
+      respond_to do |format|
+        format.html
+        format.csv { send_data LexicoFile.to_csv, filename: "BULE-#{DateTime.now.strftime("%d%m%Y%H%M")}.csv"}
+      end
     end
 
     def alphabet
