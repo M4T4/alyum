@@ -10,6 +10,8 @@
     .col.my-auto.pb-2
       .h1= "Buscador léxico"
     .col-8
+      .text-end
+        = link_to "Exportar", admin_lexico_files_path(format: 'csv'), class: "btn btn-primary"
 
   .px-4
     .card.mb-3.px-0
