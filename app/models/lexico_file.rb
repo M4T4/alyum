@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class LexicoFile < ApplicationRecord
+	require 'csv'
 	nilify_blanks
 	has_paper_trail
 
@@ -22,5 +23,14 @@ class LexicoFile < ApplicationRecord
     ["versions"]
   end
 
+	def self.to_csv
+		lexico_files = all
+		CSV.generate do |csv|
+			csv << column_names
+			lexico_files.each do |lf|
+				csv << lf.attributes.values_at(*column_names)
+			end
+		end
+	end
 
 end
