@@ -23,9 +23,13 @@
         %th{scope: "col"}= sort_link(@q, :word, "Palabra", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :spanish_word, "Español", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :english_word, "Ingles", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :language, "Archivo Bibliográfico", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :language, "A.F.", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :language, "Estructura", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :author, "Autor", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :year_of_publication, "Año de publicación", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :page, "Página", default_order: :asc)
+        %th{scope: "col"}= sort_link(@q, :page, "Lengua Original", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :alphabet, "Alfabeto", default_order: :asc)
         %th{scope: "col"}= sort_link(@q, :audio, "Audio", default_order: :asc)
     %tbody
@@ -37,9 +41,13 @@
             %td= file.word 
             %td= file.spanish_word
             %td= file.english_word
+            %td= file.bibliographic_file_id
+            %td= file.af
+            %td= file.structure
             %td= resercher_full_name(file)
             %td= file.year
             %td= file.page
+            %td= file.original_language
             - if file.alphabet_id
               %td
                 = link_to alphabet_lexico_search_engine_path(file, alphabet_id: file.alphabet_id), "data-controller": "turbo" do
@@ -50,5 +58,6 @@
               %td= audio_tag  Rails.application.routes.url_helpers.rails_blob_url(file.audio_file, only_path: true ), controls: true, controlslist: "nodownload noplaybackrate"
             - else
               %td
+            
 
   %div.pb-3
