@@ -61,4 +61,42 @@ namespace :custom_task do
       t.save
     end
   end
+
+
+  desc 'New lexic files 2024'
+  task populate_lexic_db_2024: :environment do
+    csv_text = File.read(Rails.root.join('lib', 'seeds', 'bule_armida_1.csv'))
+    # Esto es lo que se tiene que hacer en caso de generar el csv por medio de excel
+    csv = CSV.parse(csv_text, headers: true, encoding: 'UTF-8')
+    csv.each do |row|
+      t = LexicoFile.new
+
+      t.language = row['LNG']
+      t.word = row['Palabra']
+      t.spanish_word = row['Espanol']
+      t.english_word = row['Ingles']
+      t.page = row['Pagina']
+      t.bibliographic_file_id = row['Bibliographic_file_id']
+      t.af = row['A.F.']
+      t.structure = row['Estructura']
+      t.original_language = row['Lengua Original']
+      # t.alphabet = row['A.F.']
+      t.provider = row['Prestador']
+      if row['<-Traducida por capturista'] == 'si' 
+        t.translated = 1
+      else
+        t.translated = 0
+      end
+
+      if row['Audio'] == 'si'
+        t.audio = 1
+      else
+        t.audio = 0
+      end
+
+      date_obj = Date.strptime(row['Fecha'], '%Y-%m-%d')
+      t.created_at = date_obj
+      t.save
+    end
+  end
 end
